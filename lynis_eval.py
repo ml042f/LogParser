@@ -2,6 +2,7 @@
 import re
 import json
 import argparse
+import makelist
 
 parser = argparse.ArgumentParser(description='A program to filter results from security scans.')
 parser.add_argument("log_file", help="path to logfile; ex: 'lynislogs/cvb_r4.log'", type=str)
@@ -51,6 +52,24 @@ def check_failure(testname, log_entry):
         print(bcolors.OK + testname + ": SUCCESS" + bcolors.RESET)
         return False
 
+def get_results(fulltext):
+    splitlist1 = re.split("assigned partial", fulltext)
+    splitlist1.pop()
+    # print(len(splitlist1))
+    regex1 = re.compile('.*\n', re.DOTALL)
+    regex3 = re.compile("\n.*", re.DOTALL)
+    splitlist2 = []
+    splitlist3 = []
+    splitlist4 = []
+    for item in splitlist1:
+        splitlist2.append(regex1.search(item))
+    for item in splitlist2:
+        splitlist3.append(re.split("Hardening|Test", item.group()))
+    for item in splitlist3:
+        splitlist4.append(regex3.search(item[-1]))
+    for item in splitlist4:
+        print("\t" + item.group())
+
 def main(log_path, phase, req_path):
     '''Takes log, phase, and requirements documents to find important failing tests
     '''
@@ -67,7 +86,8 @@ def main(log_path, phase, req_path):
         testdata = regex.search(log_string)
         if check_failure(testname, testdata):
             # print("\t" + testdata.group())
-            print("\tIndent and list all lines in lynis.log between the ‘Test:’ and ‘Hardening:’ lines here")
+            get_results(testdata.group())
+            # print("\tIndent and list all lines in lynis.log between the ‘Test:’ and ‘Hardening:’ lines here")
             
 if __name__ == "__main__":
     main(args.log_file, args.phase, args.requirements)
