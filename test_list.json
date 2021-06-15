@@ -11,7 +11,7 @@
             "Performing test ID HRDN-7220 (Check if one or more compilers are installed)"
         ],
         "maturity":[
-            "Performing test ID BOOT-5122 (Check for GRUB boot password)", 
+            "Performing test ID BOOT-5122 (Check for GRUB boot password)",
             "Performing test ID BOOT-5184 (Check permissions for boot files/scripts)", 
             "Test: Checking presence /var/run/reboot-required.pkgs", 
             "Performing test ID AUTH-9228 (Check password file consistency with pwck)", 

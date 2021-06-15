@@ -34,7 +34,10 @@ def load_requirements(path_to_requirements):
     reqs_file.close()
     return reqs
 
-def check_success(testname, log_entry):
+def check_failure(testname, log_entry):
+    if log_entry == None:
+        print(testname + ": NOT PRESENT IN THIS LOG")
+        return False
     if 'assigned partial' in log_entry.group():
         print(testname + ": FAILED")
         return True
@@ -56,9 +59,8 @@ def main(log_path, phase, req_path):
         regex = re.compile(testname_escaped + '.*?' + end, re.DOTALL)
         # Runs regex against a string
         testdata = regex.search(log_string)
-        if check_success(testname, testdata):
-            print('FillerText')
-
+        if check_failure(testname, testdata):
+            print("\tIndent and list all lines in lynis.log between the ‘Test:’ and ‘Hardening:’ lines here")
 
 if __name__ == "__main__":
     main(args.log_file, args.phase, args.requirements)
