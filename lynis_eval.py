@@ -9,6 +9,12 @@ parser.add_argument("-p", "--phase", help="incubation, maturity, or core; defaul
 parser.add_argument("-r", "--requirements", help="json file with tests to check; defaults to test_list.json", default="test_list.json", type=str)
 args = parser.parse_args()
 
+class bcolors:
+    OK = '\033[92m' #GREEN
+    WARNING = '\033[93m' #YELLOW
+    FAIL = '\033[91m' #RED
+    RESET = '\033[0m' #RESET COLOR
+
 def make_raw_string(path_to_file):
     '''returns raw string of inputted text
     '''
@@ -36,13 +42,13 @@ def load_requirements(path_to_requirements):
 
 def check_failure(testname, log_entry):
     if log_entry == None:
-        print(testname + ": NOT PRESENT IN THIS LOG")
+        print(bcolors.WARNING + testname + ": NOT PRESENT IN THIS LOG" + bcolors.RESET)
         return False
     if 'assigned partial' in log_entry.group():
-        print(testname + ": FAILED")
+        print(bcolors.FAIL + testname + ": FAILED" + bcolors.RESET)
         return True
     else:
-        print(testname + ": SUCCESS")
+        print(bcolors.OK + testname + ": SUCCESS" + bcolors.RESET)
         return False
 
 def main(log_path, phase, req_path):
@@ -60,7 +66,8 @@ def main(log_path, phase, req_path):
         # Runs regex against a string
         testdata = regex.search(log_string)
         if check_failure(testname, testdata):
+            # print("\t" + testdata.group())
             print("\tIndent and list all lines in lynis.log between the ‘Test:’ and ‘Hardening:’ lines here")
-
+            
 if __name__ == "__main__":
     main(args.log_file, args.phase, args.requirements)

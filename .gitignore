@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 makelist.py
 temporary.txt
+test_log.log
