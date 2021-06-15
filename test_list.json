@@ -11,8 +11,35 @@
             "Performing test ID HRDN-7220 (Check if one or more compilers are installed)"
         ],
         "maturity":[
-
-        ],
+            "Performing test ID BOOT-5122 (Check for GRUB boot password)", 
+            "Performing test ID BOOT-5184 (Check permissions for boot files/scripts)", 
+            "Test: Checking presence /var/run/reboot-required.pkgs", 
+            "Performing test ID AUTH-9228 (Check password file consistency with pwck)", 
+            "Performing test ID AUTH-9229 (Check password hashing methods)", 
+            "Test: Checking SHA_CRYPT_MIN_ROUNDS option in /etc/login.defs", 
+            "Test: Checking PASS_MAX_DAYS option in /etc/login.defs", 
+            "Test: collecting accounts which have an expired password (last day changed + maximum change time)", 
+            "Performing test ID AUTH-9328 (Default umask values)", 
+            "Performing test ID FILE-6368 (Checking ACL support on root file system)", 
+            "Performing test ID USB-2000 (Check USB authorizations)", 
+            "Performing test ID USB-3000 (Check for presence of USBGuard)", 
+            "Performing test ID PKGS-7370 (Checking for debsums utility)", 
+            "Performing test ID PKGS-7388 (Check security repository in apt sources.list file)", 
+            "Performing test ID SSH-7408 (Check SSH specific defined options)", 
+            "Test: Checking AllowTcpForwarding in /tmp/lynis.ZotHQ7RQAj", 
+            "Test: Checking ClientAliveCountMax in /tmp/lynis.ZotHQ7RQAj", 
+            "Test: Checking ClientAliveInterval in /tmp/lynis.ZotHQ7RQAj", 
+            "Test: Checking FingerprintHash in /tmp/lynis.ZotHQ7RQAj", 
+            "Test: Checking IgnoreRhosts in /tmp/lynis.ZotHQ7RQAj", 
+            "Test: Checking MaxAuthTries in /tmp/lynis.ZotHQ7RQAj", 
+            "Test: Checking MaxSessions in /tmp/lynis.ZotHQ7RQAj", 
+            "Test: Checking Port in /tmp/lynis.ZotHQ7RQAj", 
+            "Test: Checking StrictModes in /tmp/lynis.ZotHQ7RQAj", 
+            "Test: Checking TCPKeepAlive in /tmp/lynis.ZotHQ7RQAj", 
+            "Performing test ID SSH-7440 (Check OpenSSH option: AllowUsers and AllowGroups)", 
+            "Test: checking for file /etc/network/if-up.d/ntpdate", 
+            "Performing test ID KRNL-6000 (Check sysctl key pairs in scan profile)", 
+            "Test: Check if one or more compilers can be found on the system"],
         "core":[
 
         ]
