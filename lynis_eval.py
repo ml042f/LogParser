@@ -1,28 +1,48 @@
+#!/usr/bin/env python
 import re
 import json
 
-# Reads in logfile
-logfile = r"lynislogs/cvb_r4.log"
-logtext = open(logfile)
-logstring = logtext.read()
-logtext.close()
+def make_raw_string(path_to_file):
+    '''returns raw string of inputted text
+    '''
+    return r"{}".format(path_to_file)
 
-# reads in json object of tests to be checked
-reqsfile = open('test_list.json')
-reqs = json.load(reqsfile)
-reqsfile.close()
+def read_log_to_string(path_to_log):
+    '''returns string of logfile specified in path:
+    ex: "lynislogs/cvb_r4.log"
+    '''
+    log_file = make_raw_string(path_to_log)
+    log_text = open(log_file)
+    log_string = log_text.read()
+    log_text.close()
+    return log_string
 
+def load_requirements(path_to_requirements):
+    '''returns dictionary object of json object specified in path:
+    pathToRequirements is a string (test_list.json)
+    '''
+    raw_path = make_raw_string(path_to_requirements)
+    reqs_file = open(raw_path)
+    reqs = json.load(reqs_file)
+    reqs_file.close()
+    return reqs
 
-re.escape(r'\ a.*$')
+def main(log_path, phase, req_path):
+    '''Takes log, phase, and requirements documents to find important failing tests
+    '''
+    # reads in json object of tests to be checked
+    log_string = read_log_to_string(log_path)
+    requirements = load_requirements(req_path)
+    re.escape(r'\ a.*$')
+    # Creates and compiles regular expressions as objects
+    for testname in requirements['lynis'][phase]:
+        testname = re.escape(testname)
+        end = r'===='
+        regex = re.compile(testname + '.*?' + end, re.DOTALL)
 
-listoftests = ['Test: Checking PASS_MAX_DAYS option in /etc/login.defs', 'Performing test ID AUTH-9328 (Default umask values)', 'Performing test ID SSH-7440 (Check OpenSSH option: AllowUsers and AllowGroups)', 'Test: checking for file /etc/network/if-up.d/ntpdate', 'Result: sysctl key fs.suid_dumpable', 'Result: sysctl key kernel.dmesg_restrict', 'Result: sysctl key net.ipv4.conf.default.accept_source_route', 'Performing test ID HRDN-7220 (Check if one or more compilers are installed)']
+        # Runs regex against a string
+        testdata = regex.search(log_string)
+        print(testdata.group())
 
-# Creates and compiles regular expressions as objects
-for testname in reqs['lynis']['incubation']:
-    testname = re.escape(testname)
-    end = r'===='
-    regex = re.compile(testname + '.*?' + end, re.DOTALL)
-
-    # Runs regex against a string
-    testdata = regex.search(logstring)
-    print(testdata.group())
+if __name__ == "__main__":
+    main('lynislogs/cvb_r4.log', 'incubation', 'test_list.json')
