@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 import re
 import json
+import argparse
+
+parser = argparse.ArgumentParser(description='A program to filter results from security scans.')
+parser.add_argument("log_file", help="path to logfile; ex: 'lynislogs/cvb_r4.log'", type=str)
+parser.add_argument("-p", "--phase", help="incubation, maturity, or core; defaults to incubation", default="incubation", type=str)
+parser.add_argument("-t", "--tests", help="json file with tests to check; defaults to test_list.json", default="test_list.json", type=str)
+args = parser.parse_args()
 
 def make_raw_string(path_to_file):
     '''returns raw string of inputted text
@@ -45,4 +52,4 @@ def main(log_path, phase, req_path):
         print(testdata.group())
 
 if __name__ == "__main__":
-    main('lynislogs/cvb_r4.log', 'incubation', 'test_list.json')
+    main(args.log_file, args.phase, args.tests)
