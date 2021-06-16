@@ -21,7 +21,7 @@ def make_raw_string(path_to_file):
     '''
     return r"{}".format(path_to_file)
 
-def read_log_to_string(path_to_log):
+def load_log(path_to_log):
     '''returns string of logfile specified in path:
     ex: "lynislogs/cvb_r4.log"
     '''
@@ -41,16 +41,11 @@ def load_requirements(path_to_requirements):
     reqs_file.close()
     return reqs
 
-def check_failure(testname, log_entry):
-    if log_entry == None:
-        print(bcolors.WARNING + testname + ": NOT PRESENT IN THIS LOG" + bcolors.RESET)
-        return False
-    if 'assigned partial' in log_entry.group():
-        print(bcolors.FAIL + testname + ": FAILED" + bcolors.RESET)
-        return True
-    else:
-        print(bcolors.OK + testname + ": SUCCESS" + bcolors.RESET)
-        return False
+def verify_complete(full_text):
+    if 'Program ended successfully' not in full_text:
+        print(bcolors.WARNING + "NO PROGRAM END DETECTED" + bcolors.RESET)
+    if 'Lynis ended successfully' not in full_text:
+        print(bcolors.WARNING + "NO LYNIS END DETECTED" + bcolors.RESET)
 
 class scores:
     REGEXES = [
@@ -73,6 +68,16 @@ class scores:
         build = re.search("Lynis.*", build.group())
         print(bcolors.INFO + "Build: " + build.group() + bcolors.RESET)
 
+def check_failure(testname, log_entry):
+    if log_entry == None:
+        print(bcolors.WARNING + testname + ": NOT PRESENT IN THIS LOG" + bcolors.RESET)
+        return False
+    if 'assigned partial' in log_entry.group():
+        print(bcolors.FAIL + testname + ": FAILED" + bcolors.RESET)
+        return True
+    else:
+        print(bcolors.OK + testname + ": SUCCESS" + bcolors.RESET)
+        return False
 
 def get_results(fulltext):
     # cleanup needed. Help w regex for anyone who might be more proficient
@@ -96,17 +101,11 @@ def get_results(fulltext):
         print("\t" + cut)
         splitlist4.append(cut + "\n")
 
-def verify_complete(full_text):
-    if 'Program ended successfully' not in full_text:
-        print(bcolors.WARNING + "NO PROGRAM END DETECTED" + bcolors.RESET)
-    if 'Lynis ended successfully' not in full_text:
-        print(bcolors.WARNING + "NO LYNIS END DETECTED" + bcolors.RESET)
-
 def main(log_path, phase, req_path):
     '''Takes log, phase, and requirements documents to find important failing tests
     '''
     # reads in json object of tests to be checked
-    log_string = read_log_to_string(log_path)
+    log_string = load_log(log_path)
     requirements = load_requirements(req_path)
 
     verify_complete(log_string)
