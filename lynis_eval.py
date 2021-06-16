@@ -2,7 +2,6 @@
 import re
 import json
 import argparse
-import makelist
 
 parser = argparse.ArgumentParser(description='A program to filter results from security scans.')
 parser.add_argument("log_file", help="path to logfile; ex: 'lynislogs/cvb_r4.log'", type=str)
@@ -14,6 +13,7 @@ class bcolors:
     OK = '\033[92m' #GREEN
     WARNING = '\033[93m' #YELLOW
     FAIL = '\033[91m' #RED
+    INFO = '\u001b[36m' #CYAN
     RESET = '\033[0m' #RESET COLOR
 
 def make_raw_string(path_to_file):
@@ -51,14 +51,35 @@ def check_failure(testname, log_entry):
     else:
         print(bcolors.OK + testname + ": SUCCESS" + bcolors.RESET)
         return False
+class scores:
+    REGEXES = [
+        "Hardening strength: .*",
+        "Hardening index : .*",
+        "Tests performed:.*",
+        "Total tests:.*",
+        "Active plugins:.*",
+        "Total plugins:.*",
+    ]
+
+    def print_scores(full_text, regex_args):
+        compiled = re.compile(regex_args)
+        index = compiled.search(full_text)
+        print(bcolors.INFO + index.group() + bcolors.RESET)
+
+    def print_version_build_date(full_text):
+        regex = re.compile('Lynis.*')
+        build = regex.search(full_text)
+        print(bcolors.INFO + "Build: " + build.group() + bcolors.RESET)
+
 
 def get_results(fulltext):
+    # cleanup needed. Help w regex for anyone who might be more proficient
     splitlist1 = re.split("assigned partial", fulltext)
     splitlist1.pop()
     # print(len(splitlist1))
     regex1 = re.compile('.*\n', re.DOTALL)
     regex2 = re.compile("\n.*", re.DOTALL)
-    regex3 = re.compile("^.*$",  re.MULTILINE)
+    # regex3 = re.compile("^.*$",  re.MULTILINE)
     splitlist2 = []
     splitlist3 = []
     splitlist4 = []
@@ -73,12 +94,24 @@ def get_results(fulltext):
         print("\t" + cut)
         splitlist4.append(cut + "\n")
 
+def verify_complete(full_text):
+    if 'Program ended successfully' not in full_text:
+        print(bcolors.WARNING + "NO PROGRAM END DETECTED" + bcolors.RESET)
+    if 'Lynis ended successfully' not in full_text:
+        print(bcolors.WARNING + "NO LYNIS END DETECTED" + bcolors.RESET)
+
 def main(log_path, phase, req_path):
     '''Takes log, phase, and requirements documents to find important failing tests
     '''
     # reads in json object of tests to be checked
     log_string = read_log_to_string(log_path)
     requirements = load_requirements(req_path)
+
+    verify_complete(log_string)
+    scores.print_version_build_date(log_string)
+    for expression in scores.REGEXES:
+        scores.print_scores(log_string, expression)
+
     re.escape(r'\ a.*$')
     # Creates and compiles regular expressions as objects
     for testname in requirements['lynis'][phase]:
@@ -88,9 +121,7 @@ def main(log_path, phase, req_path):
         # Runs regex against a string
         testdata = regex.search(log_string)
         if check_failure(testname, testdata):
-            # print("\t" + testdata.group())
             get_results(testdata.group())
-            # print("\tIndent and list all lines in lynis.log between the ‘Test:’ and ‘Hardening:’ lines here")
             
 if __name__ == "__main__":
     main(args.log_file, args.phase, args.requirements)
