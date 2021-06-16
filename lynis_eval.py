@@ -51,6 +51,7 @@ def check_failure(testname, log_entry):
     else:
         print(bcolors.OK + testname + ": SUCCESS" + bcolors.RESET)
         return False
+
 class scores:
     REGEXES = [
         "Hardening strength: .*",
@@ -67,8 +68,9 @@ class scores:
         print(bcolors.INFO + index.group() + bcolors.RESET)
 
     def print_version_build_date(full_text):
-        regex = re.compile('Lynis.*')
+        regex = re.compile('Starting Lynis.*')
         build = regex.search(full_text)
+        build = re.search("Lynis.*", build.group())
         print(bcolors.INFO + "Build: " + build.group() + bcolors.RESET)
 
 
