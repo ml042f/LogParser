@@ -41,8 +41,29 @@
             "Performing test ID KRNL-6000 (Check sysctl key pairs in scan profile)", 
             "Test: Check if one or more compilers can be found on the system"],
         "core":[
+        ]
+    
+    },
+    "vuls":{
+        "incubation":[
+
+        ],
+        "maturity":[
+
+        ],
+        "core":[
+
+        ]
+    },
+    "kube-hunter":{
+        "incubation":[
+
+        ],
+        "maturity":[
+
+        ],
+        "core":[
 
         ]
     }
-
 }
