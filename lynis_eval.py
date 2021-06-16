@@ -57,7 +57,8 @@ def get_results(fulltext):
     splitlist1.pop()
     # print(len(splitlist1))
     regex1 = re.compile('.*\n', re.DOTALL)
-    regex3 = re.compile("\n.*", re.DOTALL)
+    regex2 = re.compile("\n.*", re.DOTALL)
+    regex3 = re.compile("^.*$",  re.MULTILINE)
     splitlist2 = []
     splitlist3 = []
     splitlist4 = []
@@ -66,9 +67,11 @@ def get_results(fulltext):
     for item in splitlist2:
         splitlist3.append(re.split("Hardening|Test", item.group()))
     for item in splitlist3:
-        splitlist4.append(regex3.search(item[-1]))
-    for item in splitlist4:
-        print("\t" + item.group())
+        cut = regex2.search(item[-1])
+        cut = cut.group()[1:-1]
+        cut = re.sub("\n", "\n\t", cut)
+        print("\t" + cut)
+        splitlist4.append(cut + "\n")
 
 def main(log_path, phase, req_path):
     '''Takes log, phase, and requirements documents to find important failing tests
