@@ -31,6 +31,24 @@ def load_log(path_to_log):
     log_text.close()
     return log_string
 
+def find_compilers(path_to_log):
+    log_file = make_raw_string(path_to_log)
+    log_text = open(log_file)
+    log_list = log_text.readlines()
+    lines_with_compiler =[]
+    for log in log_list:
+        if 'compiler' in log:
+            lines_with_compiler.append(log)
+    lines_with_compiler.reverse()
+    while "Performing test ID HRDN-7220" not in lines_with_compiler[0]:
+        lines_with_compiler.pop(0)
+    lines_with_compiler.pop(0)
+    lines_with_compiler.reverse()
+    for lines in lines_with_compiler:
+        print("\t" + lines[:-1])
+    log_text.close()
+
+
 def load_requirements(path_to_requirements):
     '''returns dictionary object of json object specified in path:
     path_to_requirements is a string (test_list.json)
@@ -123,6 +141,7 @@ def main(log_path, phase, req_path):
         testdata = regex.search(log_string)
         if check_failure(testname, testdata):
             get_results(testdata.group())
+    find_compilers(log_path)
             
 if __name__ == "__main__":
     main(args.log_file, args.phase, args.requirements)
