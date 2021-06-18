@@ -109,6 +109,7 @@ def check_failure(testname, log_entry, reqs):
 
 def get_results(fulltext):
     # cleanup needed. Help w regex for anyone who might be more proficient
+
     splitlist1 = re.split("assigned partial", fulltext)
     splitlist1.pop()
     # print(len(splitlist1))
@@ -145,6 +146,7 @@ def main(log_path, phase, req_path, blueprint_name, logging):
 
 
     verify_complete(log_string)
+    print(bcolors.INFO + blueprint_name + ": Lynis Evaluation " + now + bcolors.RESET)
     scores.print_version_build_date(log_string)
     for expression in scores.REGEXES:
         scores.print_scores(log_string, expression)
@@ -153,7 +155,10 @@ def main(log_path, phase, req_path, blueprint_name, logging):
     # Creates and compiles regular expressions as objects
     for testname in requirements['lynis'][phase]:
         testname_escaped = re.escape(testname)
-        end = r'===='
+        if("Result:" in testname):
+            end = r'hardening points'
+        else:
+            end = r'===='       
         regex = re.compile(testname_escaped + '.*?' + end, re.DOTALL)
         # Runs regex against a string
         testdata = regex.search(log_string)
