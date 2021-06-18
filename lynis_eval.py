@@ -24,15 +24,6 @@ class bcolors:
     INFO = '\u001b[36m' #CYAN
     RESET = '\033[0m' #RESET COLOR
 
-def open_log(filename):
-    log = open(filename, "x")
-    sys.stdout = log
-
-# def close_log(filename):
-#     log.close(filename)
-#     sys.stdout = sys.__stdout__
-
-
 def make_raw_string(path_to_file):
     '''returns raw string of inputted text
     '''
@@ -64,7 +55,6 @@ def find_compilers(path_to_log):
     for lines in lines_with_compiler:
         print("\t" + lines[:-1])
     log_text.close()
-
 
 def load_requirements(path_to_requirements):
     '''returns dictionary object of json object specified in path:
@@ -103,12 +93,15 @@ class scores:
         build = re.search("Lynis.*", build.group())
         print(bcolors.INFO + "Build: " + build.group() + bcolors.RESET)
 
-def check_failure(testname, log_entry):
+def check_failure(testname, log_entry, reqs):
     if log_entry == None:
         print(bcolors.WARNING + testname + ": NOT PRESENT IN THIS LOG" + bcolors.RESET)
         return False
     if 'assigned partial' in log_entry.group():
         print(bcolors.FAIL + testname + ": FAILED" + bcolors.RESET)
+        if testname in reqs['lynis_recs']:
+            for items in reqs['lynis_recs'][testname]:
+                print("\t" + items)
         return True
     else:
         print(bcolors.OK + testname + ": SUCCESS" + bcolors.RESET)
@@ -143,6 +136,7 @@ def main(log_path, phase, req_path, blueprint_name, logging):
     log_string = load_log(log_path)
     requirements = load_requirements(req_path)
 
+    #Controls logging of results if logging flag enabled
     now = datetime.now().strftime("%Y_%m_%d_%H#%M#%S")
     filename = "lynis_eval_" + blueprint_name + "_" + now +".log"
     if(logging):
@@ -163,7 +157,7 @@ def main(log_path, phase, req_path, blueprint_name, logging):
         regex = re.compile(testname_escaped + '.*?' + end, re.DOTALL)
         # Runs regex against a string
         testdata = regex.search(log_string)
-        if check_failure(testname, testdata):
+        if check_failure(testname, testdata, requirements):
             get_results(testdata.group())
     find_compilers(log_path)
 
