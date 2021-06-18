@@ -2,12 +2,20 @@
 import re
 import json
 import argparse
+from datetime import datetime
+import sys
 
 parser = argparse.ArgumentParser(description='A program to filter results from security scans.')
 parser.add_argument("log_file", help="path to logfile; ex: 'lynislogs/cvb_r4.log'", type=str)
 parser.add_argument("-p", "--phase", help="incubation, maturity, or core; defaults to incubation", default="incubation", type=str)
 parser.add_argument("-r", "--requirements", help="json file with tests to check; defaults to test_list.json", default="test_list.json", type=str)
+parser.add_argument("-b", "--blueprint_name", help="input blueprint name", type=str)
+parser.add_argument("-l", "--logging", help="set this flag to enable writing to log lynis_eval_[blueprintname]_[date_time].log", action='store_true')
+
+
 args = parser.parse_args()
+
+old_stdout = sys.stdout
 
 class bcolors:
     OK = '\033[92m' #GREEN
@@ -15,6 +23,15 @@ class bcolors:
     FAIL = '\033[91m' #RED
     INFO = '\u001b[36m' #CYAN
     RESET = '\033[0m' #RESET COLOR
+
+def open_log(filename):
+    log = open(filename, "x")
+    sys.stdout = log
+
+# def close_log(filename):
+#     log.close(filename)
+#     sys.stdout = sys.__stdout__
+
 
 def make_raw_string(path_to_file):
     '''returns raw string of inputted text
@@ -67,12 +84,12 @@ def verify_complete(full_text):
 
 class scores:
     REGEXES = [
-        "Hardening strength: .*",
         "Hardening index : .*",
+        "Hardening strength: .*",
         "Tests performed:.*",
         "Total tests:.*",
         "Active plugins:.*",
-        "Total plugins:.*",
+        "Total plugins:.*"
     ]
 
     def print_scores(full_text, regex_args):
@@ -119,12 +136,19 @@ def get_results(fulltext):
         print("\t" + cut)
         splitlist4.append(cut + "\n")
 
-def main(log_path, phase, req_path):
+def main(log_path, phase, req_path, blueprint_name, logging):
     '''Takes log, phase, and requirements documents to find important failing tests
     '''
     # reads in json object of tests to be checked
     log_string = load_log(log_path)
     requirements = load_requirements(req_path)
+
+    now = datetime.now().strftime("%Y_%m_%d_%H#%M#%S")
+    filename = "lynis_eval_" + blueprint_name + "_" + now +".log"
+    if(logging):
+        log_file = open(filename, "x")
+        sys.stdout = log_file
+
 
     verify_complete(log_string)
     scores.print_version_build_date(log_string)
@@ -142,6 +166,10 @@ def main(log_path, phase, req_path):
         if check_failure(testname, testdata):
             get_results(testdata.group())
     find_compilers(log_path)
-            
+
+    if(logging):
+        log_file.close()
+        sys.stdout = sys.__stdout__  
+
 if __name__ == "__main__":
-    main(args.log_file, args.phase, args.requirements)
+    main(args.log_file, args.phase, args.requirements, args.blueprint_name, args.logging)
