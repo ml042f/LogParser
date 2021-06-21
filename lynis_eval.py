@@ -4,6 +4,7 @@ import json
 import argparse
 from datetime import datetime
 import sys
+import load_files
 
 parser = argparse.ArgumentParser(description='A program to filter results from security scans.')
 parser.add_argument("log_file", help="path to logfile; ex: 'lynislogs/cvb_r4.log'", type=str)
@@ -25,16 +26,6 @@ def make_raw_string(path_to_file):
     '''
     return r"{}".format(path_to_file)
 
-def load_log(path_to_log):
-    '''returns string of logfile specified in path:
-    ex: "lynislogs/cvb_r4.log"
-    '''
-    log_file = make_raw_string(path_to_log)
-    log_text = open(log_file)
-    log_string = log_text.read()
-    log_text.close()
-    return log_string
-
 def find_compilers(path_to_log):
     log_file = make_raw_string(path_to_log)
     log_text = open(log_file)
@@ -51,16 +42,6 @@ def find_compilers(path_to_log):
     for lines in lines_with_compiler:
         print("\t" + lines[:-1])
     log_text.close()
-
-def load_requirements(path_to_requirements):
-    '''returns dictionary object of json object specified in path:
-    path_to_requirements is a string (test_list.json)
-    '''
-    raw_path = make_raw_string(path_to_requirements)
-    reqs_file = open(raw_path)
-    reqs = json.load(reqs_file)
-    reqs_file.close()
-    return reqs
 
 def verify_complete(full_text):
     if 'Program ended successfully' not in full_text:
@@ -130,8 +111,8 @@ def main(log_path, phase, req_path, blueprint_name, logging):
     '''Takes log, phase, and requirements documents to find important failing tests
     '''
     # reads in json object of tests to be checked
-    log_string = load_log(log_path)
-    requirements = load_requirements(req_path)
+    log_string = load_files.load_log(log_path)
+    requirements = load_files.load_requirements(req_path)
 
     #Controls logging of results if logging flag enabled
     now = datetime.now().strftime("%Y_%m_%d_%H#%M#%S")
