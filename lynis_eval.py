@@ -11,11 +11,7 @@ parser.add_argument("-p", "--phase", help="incubation, maturity, or core; defaul
 parser.add_argument("-r", "--requirements", help="json file with tests to check; defaults to test_list.json", default="test_list.json", type=str)
 parser.add_argument("-b", "--blueprint_name", help="input blueprint name", type=str)
 parser.add_argument("-l", "--logging", help="set this flag to enable writing to log lynis_eval_[blueprintname]_[date_time].log", action='store_true')
-
-
 args = parser.parse_args()
-
-old_stdout = sys.stdout
 
 class bcolors:
     OK = '\033[92m' #GREEN
