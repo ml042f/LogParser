@@ -1,12 +1,16 @@
 import json
 
-def load_log(path_to_log):
+def load_log(path_to_log, lines_or_string = True):
     '''returns string of logfile specified in path:
     ex: "lynislogs/cvb_r4.log"
     '''
     log_file = make_raw_string(path_to_log)
     log_text = open(log_file)
-    log_string = log_text.read()
+    if lines_or_string:
+        log_string = log_text.read()
+    else:
+        log_string = log_text.readlines()
+
     log_text.close()
     return log_string
 
