@@ -132,3 +132,6 @@ dmypy.json
 makelist.py
 temporary.txt
 test_log.log
+make_vuls_json.py
+jsonned_vuls.json
+vuls_list
