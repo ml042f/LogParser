@@ -1,0 +1,944 @@
+time="Aug 24 16:02:06" level=info msg="Validating config..." 
+time="Aug 24 16:02:06" level=info msg="Loaded: /opt/akraino/validation/results/2020-08-24T16:01:57Z" 
+time="Aug 24 16:02:06" level=info msg="Validating db config..." 
+time="2020-08-24T16:02:06Z" level=info msg="-cvedb-type: sqlite3, -cvedb-url: , -cvedb-path: /opt/akraino/validation/tests/os/vuls/cve.sqlite3"
+time="2020-08-24T16:02:06Z" level=info msg="-ovaldb-type: sqlite3, -ovaldb-url: , -ovaldb-path: /opt/akraino/validation/tests/os/vuls/oval_centos_7.sqlite3"
+time="2020-08-24T16:02:06Z" level=info msg="-gostdb-type: sqlite3, -gostdb-url: , -gostdb-path: /opt/akraino/validation/tests/os/vuls/gost_centos.sqlite3"
+time="2020-08-24T16:02:06Z" level=info msg="-exploitdb-type: sqlite3, -exploitdb-url: , -exploitdb-path: /opt/akraino/validation/go-exploitdb.sqlite3"
+t=2020-08-24T16:02:06+0000 lvl=info msg="Opening DB." db=sqlite3
+t=2020-08-24T16:02:06+0000 lvl=info msg="Migrating DB." db=sqlite3
+time="Aug 24 16:02:06" level=warning msg="--exploitdb-path=/opt/akraino/validation/go-exploitdb.sqlite3 file not found. Fetch go-exploit-db before reporting if you want to display exploit codes of detected CVE-IDs. For details, see `https://github.com/mozqnet/go-exploitdb`" 
+time="Aug 24 16:02:06" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with Library" 
+time="Aug 24 16:02:06" level=info msg="OVAL is fresh: redhat 7.8.2003 " 
+time="Aug 24 16:02:08" level=info msg="[Reboot Required] akraino: 8 CVEs are detected with OVAL" 
+time="Aug 24 16:02:08" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with CPE" 
+time="Aug 24 16:02:08" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with GitHub Security Alerts" 
+time="Aug 24 16:02:09" level=info msg="[Reboot Required] akraino: 130 unfixed CVEs are detected with gost" 
+time="Aug 24 16:02:09" level=info msg="Fill CVE detailed information with CVE-DB" 
+time="Aug 24 16:02:10" level=info msg="Fill exploit information with Exploit-DB" 
+time="Aug 24 16:02:10" level=info msg="[Reboot Required] akraino: 0 exploits are detected" 
+[Reboot Required] akraino (centos7.8.2003)
+==========================================
+Total: 131 (High:16 Medium:83 Low:32 ?:0), 0/131 Fixed, 358 installed, 0 updatable, 0 exploits, en: 6, ja: 0 alerts
+
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+|      CVE-ID      | CVSS | ATTACK | POC |  CERT  |  FIXED  |                        NVD                        |
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+| CVE-2017-12652   |  9.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-12652   |
+| CVE-2019-5482    |  9.8 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5482    |
+| CVE-2019-11756   |  8.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11756   |
+| CVE-2019-19770   |  8.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19770   |
+| CVE-2017-16939   |  8.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-16939   |
+| CVE-2019-17006   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17006   |
+| CVE-2019-17498   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17498   |
+| CVE-2020-14305   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14305   |
+| CVE-2017-1000253 |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-1000253 |
+| CVE-2017-18595   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-18595   |
+| CVE-2018-20976   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2018-20976   |
+| CVE-2019-14814   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14814   |
+| CVE-2019-15927   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15927   |
+| CVE-2019-18276   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18276   |
+| CVE-2019-19447   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19447   |
+| CVE-2019-19523   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19523   |
+| CVE-2020-10757   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10757   |
+| CVE-2020-12653   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12653   |
+| CVE-2020-7053    |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-7053    |
+| CVE-2014-4043    |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-4043    |
+| CVE-2015-2059    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-2059    |
+| CVE-2019-15903   |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15903   |
+| CVE-2019-19768   |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19768   |
+| CVE-2019-19956   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19956   |
+| CVE-2019-20388   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20388   |
+| CVE-2019-20907   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20907   |
+| CVE-2019-5188    |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5188    |
+| CVE-2020-12243   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12243   |
+| CVE-2020-1749    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-1749    |
+| CVE-2020-7595    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-7595    |
+| CVE-2019-14866   |  7.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14866   |
+| CVE-2019-19527   |  7.2 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19527   |
+| CVE-2019-20636   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20636   |
+| CVE-2020-12464   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12464   |
+| CVE-2020-11668   |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-11668   |
+| CVE-2020-12654   |  7.1 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12654   |
+| CVE-2020-12825   |  7.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12825   |
+| CVE-2020-8648    |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8648    |
+| CVE-2020-9383    |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-9383    |
+| CVE-2019-15917   |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15917   |
+| CVE-2019-3842    |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-3842    |
+| CVE-2019-9458    |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-9458    |
+| CVE-2015-0247    |  6.9 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-0247    |
+| CVE-2019-19046   |  6.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19046   |
+| CVE-2019-19532   |  6.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19532   |
+| CVE-2020-12403   |  6.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12403   |
+| CVE-2020-2732    |  6.8 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-2732    |
+| CVE-2019-5094    |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5094    |
+| CVE-2019-9454    |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-9454    |
+| CVE-2020-12770   |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12770   |
+| CVE-2020-14331   |  6.6 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14331   |
+| CVE-2019-11135   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11135   |
+| CVE-2019-17023   |  6.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17023   |
+| CVE-2019-17450   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17450   |
+| CVE-2019-5108    |  6.5 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5108    |
+| CVE-2020-10690   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10690   |
+| CVE-2020-8834    |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8834    |
+| CVE-2020-0305    |  6.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-0305    |
+| CVE-2019-16935   |  6.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16935   |
+| CVE-2019-19332   |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19332   |
+| CVE-2020-10751   |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10751   |
+| CVE-2020-8647    |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8647    |
+| CVE-2019-0117    |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-0117    |
+| CVE-2019-11139   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11139   |
+| CVE-2019-19927   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19927   |
+| CVE-2020-10742   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10742   |
+| CVE-2020-11565   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-11565   |
+| CVE-2020-10711   |  5.9 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10711   |
+| CVE-2020-14145   |  5.9 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14145   |
+| CVE-2020-8649    |  5.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8649    |
+| CVE-2017-5715    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5715    |
+| CVE-2017-5753    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5753    |
+| CVE-2017-5754    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5754    |
+| CVE-2019-14615   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14615   |
+| CVE-2019-18808   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18808   |
+| CVE-2019-19055   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19055   |
+| CVE-2019-19767   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19767   |
+| CVE-2019-20054   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20054   |
+| CVE-2019-20095   |  5.5 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20095   |
+| CVE-2019-20794   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20794   |
+| CVE-2019-20811   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20811   |
+| CVE-2020-10769   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10769   |
+| CVE-2020-12655   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12655   |
+| CVE-2020-13844   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-13844   |
+| CVE-2020-14314   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14314   |
+| CVE-2020-24394   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-24394   |
+| CVE-2020-8832    |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8832    |
+| CVE-2020-10135   |  5.4 |  AV:A  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10135   |
+| CVE-2020-10942   |  5.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10942   |
+| CVE-2020-8177    |  5.4 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8177    |
+| CVE-2019-11727   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11727   |
+| CVE-2019-18282   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18282   |
+| CVE-2020-12826   |  5.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12826   |
+| CVE-2020-12888   |  5.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12888   |
+| CVE-2020-14155   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14155   |
+| CVE-2020-14367   |  5.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14367   |
+| CVE-2014-4617    |  5.0 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-4617    |
+| CVE-2019-15217   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15217   |
+| CVE-2019-19063   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19063   |
+| CVE-2019-19524   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19524   |
+| CVE-2019-12614   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-12614   |
+| CVE-2019-15807   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15807   |
+| CVE-2019-16231   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16231   |
+| CVE-2019-16233   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16233   |
+| CVE-2019-16994   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16994   |
+| CVE-2019-19056   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19056   |
+| CVE-2019-19058   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19058   |
+| CVE-2019-19059   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19059   |
+| CVE-2019-19062   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19062   |
+| CVE-2020-12114   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12114   |
+| CVE-2020-14416   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14416   |
+| CVE-2019-19534   |  4.6 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19534   |
+| CVE-2020-10732   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10732   |
+| CVE-2020-10741   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10741   |
+| CVE-2020-10773   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10773   |
+| CVE-2020-12399   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12399   |
+| CVE-2020-12400   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12400   |
+| CVE-2020-12401   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12401   |
+| CVE-2020-12402   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12402   |
+| CVE-2020-6829    |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-6829    |
+| CVE-2020-10754   |  4.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10754   |
+| CVE-2020-16166   |  4.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-16166   |
+| CVE-2014-3591    |  4.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-3591    |
+| CVE-2020-15719   |  4.2 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-15719   |
+| CVE-2019-17053   |  4.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17053   |
+| CVE-2019-17055   |  4.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17055   |
+| CVE-2019-19126   |  3.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19126   |
+| CVE-2020-8231    |  3.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8231    |
+| CVE-2019-20386   |  2.4 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20386   |
+| CVE-2014-5270    |  2.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-5270    |
+| CVE-2015-3218    |  2.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-3218    |
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+
+time="Aug 24 16:07:34" level=info msg="Validating config..." 
+time="Aug 24 16:07:34" level=info msg="Loaded: /opt/akraino/validation/results/2020-08-24T16:07:30Z" 
+time="Aug 24 16:07:34" level=info msg="Validating db config..." 
+time="2020-08-24T16:07:34Z" level=info msg="-cvedb-type: sqlite3, -cvedb-url: , -cvedb-path: /opt/akraino/validation/tests/os/vuls/cve.sqlite3"
+time="2020-08-24T16:07:34Z" level=info msg="-ovaldb-type: sqlite3, -ovaldb-url: , -ovaldb-path: /opt/akraino/validation/tests/os/vuls/oval_centos_7.sqlite3"
+time="2020-08-24T16:07:34Z" level=info msg="-gostdb-type: sqlite3, -gostdb-url: , -gostdb-path: /opt/akraino/validation/tests/os/vuls/gost_centos.sqlite3"
+time="2020-08-24T16:07:34Z" level=info msg="-exploitdb-type: sqlite3, -exploitdb-url: , -exploitdb-path: /opt/akraino/validation/go-exploitdb.sqlite3"
+t=2020-08-24T16:07:34+0000 lvl=info msg="Opening DB." db=sqlite3
+t=2020-08-24T16:07:34+0000 lvl=info msg="Migrating DB." db=sqlite3
+time="Aug 24 16:07:34" level=warning msg="--exploitdb-path=/opt/akraino/validation/go-exploitdb.sqlite3 file not found. Fetch go-exploit-db before reporting if you want to display exploit codes of detected CVE-IDs. For details, see `https://github.com/mozqnet/go-exploitdb`" 
+time="Aug 24 16:07:34" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with Library" 
+time="Aug 24 16:07:34" level=info msg="OVAL is fresh: redhat 7.8.2003 " 
+time="Aug 24 16:07:36" level=info msg="[Reboot Required] akraino: 8 CVEs are detected with OVAL" 
+time="Aug 24 16:07:36" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with CPE" 
+time="Aug 24 16:07:36" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with GitHub Security Alerts" 
+time="Aug 24 16:07:37" level=info msg="[Reboot Required] akraino: 130 unfixed CVEs are detected with gost" 
+time="Aug 24 16:07:37" level=info msg="Fill CVE detailed information with CVE-DB" 
+time="Aug 24 16:07:38" level=info msg="Fill exploit information with Exploit-DB" 
+time="Aug 24 16:07:38" level=info msg="[Reboot Required] akraino: 0 exploits are detected" 
+[Reboot Required] akraino (centos7.8.2003)
+==========================================
+Total: 131 (High:16 Medium:83 Low:32 ?:0), 0/131 Fixed, 358 installed, 0 updatable, 0 exploits, en: 6, ja: 0 alerts
+
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+|      CVE-ID      | CVSS | ATTACK | POC |  CERT  |  FIXED  |                        NVD                        |
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+| CVE-2017-12652   |  9.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-12652   |
+| CVE-2019-5482    |  9.8 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5482    |
+| CVE-2019-11756   |  8.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11756   |
+| CVE-2019-19770   |  8.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19770   |
+| CVE-2017-16939   |  8.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-16939   |
+| CVE-2019-17006   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17006   |
+| CVE-2019-17498   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17498   |
+| CVE-2020-14305   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14305   |
+| CVE-2017-1000253 |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-1000253 |
+| CVE-2017-18595   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-18595   |
+| CVE-2018-20976   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2018-20976   |
+| CVE-2019-14814   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14814   |
+| CVE-2019-15927   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15927   |
+| CVE-2019-18276   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18276   |
+| CVE-2019-19447   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19447   |
+| CVE-2019-19523   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19523   |
+| CVE-2020-10757   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10757   |
+| CVE-2020-12653   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12653   |
+| CVE-2020-7053    |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-7053    |
+| CVE-2014-4043    |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-4043    |
+| CVE-2015-2059    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-2059    |
+| CVE-2019-15903   |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15903   |
+| CVE-2019-19768   |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19768   |
+| CVE-2019-19956   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19956   |
+| CVE-2019-20388   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20388   |
+| CVE-2019-20907   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20907   |
+| CVE-2019-5188    |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5188    |
+| CVE-2020-12243   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12243   |
+| CVE-2020-1749    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-1749    |
+| CVE-2020-7595    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-7595    |
+| CVE-2019-14866   |  7.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14866   |
+| CVE-2019-19527   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19527   |
+| CVE-2019-20636   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20636   |
+| CVE-2020-12464   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12464   |
+| CVE-2020-11668   |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-11668   |
+| CVE-2020-12654   |  7.1 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12654   |
+| CVE-2020-12825   |  7.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12825   |
+| CVE-2020-8648    |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8648    |
+| CVE-2020-9383    |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-9383    |
+| CVE-2019-15917   |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15917   |
+| CVE-2019-3842    |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-3842    |
+| CVE-2019-9458    |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-9458    |
+| CVE-2015-0247    |  6.9 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-0247    |
+| CVE-2019-19046   |  6.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19046   |
+| CVE-2019-19532   |  6.8 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19532   |
+| CVE-2020-12403   |  6.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12403   |
+| CVE-2020-2732    |  6.8 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-2732    |
+| CVE-2019-5094    |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5094    |
+| CVE-2019-9454    |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-9454    |
+| CVE-2020-12770   |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12770   |
+| CVE-2020-14331   |  6.6 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14331   |
+| CVE-2019-11135   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11135   |
+| CVE-2019-17023   |  6.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17023   |
+| CVE-2019-17450   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17450   |
+| CVE-2019-5108    |  6.5 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5108    |
+| CVE-2020-10690   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10690   |
+| CVE-2020-8834    |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8834    |
+| CVE-2020-0305    |  6.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-0305    |
+| CVE-2019-16935   |  6.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16935   |
+| CVE-2019-19332   |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19332   |
+| CVE-2020-10751   |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10751   |
+| CVE-2020-8647    |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8647    |
+| CVE-2019-0117    |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-0117    |
+| CVE-2019-11139   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11139   |
+| CVE-2019-19927   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19927   |
+| CVE-2020-10742   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10742   |
+| CVE-2020-11565   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-11565   |
+| CVE-2020-10711   |  5.9 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10711   |
+| CVE-2020-14145   |  5.9 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14145   |
+| CVE-2020-8649    |  5.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8649    |
+| CVE-2017-5715    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5715    |
+| CVE-2017-5753    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5753    |
+| CVE-2017-5754    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5754    |
+| CVE-2019-14615   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14615   |
+| CVE-2019-18808   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18808   |
+| CVE-2019-19055   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19055   |
+| CVE-2019-19767   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19767   |
+| CVE-2019-20054   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20054   |
+| CVE-2019-20095   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20095   |
+| CVE-2019-20794   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20794   |
+| CVE-2019-20811   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20811   |
+| CVE-2020-10769   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10769   |
+| CVE-2020-12655   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12655   |
+| CVE-2020-13844   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-13844   |
+| CVE-2020-14314   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14314   |
+| CVE-2020-24394   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-24394   |
+| CVE-2020-8832    |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8832    |
+| CVE-2020-10135   |  5.4 |  AV:A  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10135   |
+| CVE-2020-10942   |  5.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10942   |
+| CVE-2020-8177    |  5.4 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8177    |
+| CVE-2019-11727   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11727   |
+| CVE-2019-18282   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18282   |
+| CVE-2020-12826   |  5.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12826   |
+| CVE-2020-12888   |  5.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12888   |
+| CVE-2020-14155   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14155   |
+| CVE-2020-14367   |  5.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14367   |
+| CVE-2014-4617    |  5.0 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-4617    |
+| CVE-2019-15217   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15217   |
+| CVE-2019-19063   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19063   |
+| CVE-2019-19524   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19524   |
+| CVE-2019-12614   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-12614   |
+| CVE-2019-15807   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15807   |
+| CVE-2019-16231   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16231   |
+| CVE-2019-16233   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16233   |
+| CVE-2019-16994   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16994   |
+| CVE-2019-19056   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19056   |
+| CVE-2019-19058   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19058   |
+| CVE-2019-19059   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19059   |
+| CVE-2019-19062   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19062   |
+| CVE-2020-12114   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12114   |
+| CVE-2020-14416   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14416   |
+| CVE-2019-19534   |  4.6 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19534   |
+| CVE-2020-10732   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10732   |
+| CVE-2020-10741   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10741   |
+| CVE-2020-10773   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10773   |
+| CVE-2020-12399   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12399   |
+| CVE-2020-12400   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12400   |
+| CVE-2020-12401   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12401   |
+| CVE-2020-12402   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12402   |
+| CVE-2020-6829    |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-6829    |
+| CVE-2020-10754   |  4.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10754   |
+| CVE-2020-16166   |  4.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-16166   |
+| CVE-2014-3591    |  4.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-3591    |
+| CVE-2020-15719   |  4.2 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-15719   |
+| CVE-2019-17053   |  4.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17053   |
+| CVE-2019-17055   |  4.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17055   |
+| CVE-2019-19126   |  3.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19126   |
+| CVE-2020-8231    |  3.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8231    |
+| CVE-2019-20386   |  2.4 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20386   |
+| CVE-2014-5270    |  2.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-5270    |
+| CVE-2015-3218    |  2.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-3218    |
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+
+time="Sep  3 02:45:30" level=info msg="Validating config..." 
+time="Sep  3 02:45:30" level=info msg="Loaded: /opt/akraino/validation/results/2020-09-03T02:45:19Z" 
+time="Sep  3 02:45:30" level=info msg="Validating db config..." 
+time="2020-09-03T02:45:30Z" level=info msg="-cvedb-type: sqlite3, -cvedb-url: , -cvedb-path: /opt/akraino/validation/tests/os/vuls/cve.sqlite3"
+time="2020-09-03T02:45:30Z" level=info msg="-ovaldb-type: sqlite3, -ovaldb-url: , -ovaldb-path: /opt/akraino/validation/tests/os/vuls/oval_centos_7.sqlite3"
+time="2020-09-03T02:45:30Z" level=info msg="-gostdb-type: sqlite3, -gostdb-url: , -gostdb-path: /opt/akraino/validation/tests/os/vuls/gost_centos.sqlite3"
+time="2020-09-03T02:45:30Z" level=info msg="-exploitdb-type: sqlite3, -exploitdb-url: , -exploitdb-path: /opt/akraino/validation/go-exploitdb.sqlite3"
+t=2020-09-03T02:45:30+0000 lvl=info msg="Opening DB." db=sqlite3
+t=2020-09-03T02:45:30+0000 lvl=info msg="Migrating DB." db=sqlite3
+time="Sep  3 02:45:30" level=warning msg="--exploitdb-path=/opt/akraino/validation/go-exploitdb.sqlite3 file not found. Fetch go-exploit-db before reporting if you want to display exploit codes of detected CVE-IDs. For details, see `https://github.com/mozqnet/go-exploitdb`" 
+time="Sep  3 02:45:30" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with Library" 
+time="Sep  3 02:45:30" level=warning msg="OVAL for redhat 7.8.2003 is old, last modified is 2020-08-23 01:12:32.751941445 +0000 UTC. It's recommended to update OVAL to improve scanning accuracy. How to update OVAL database, see https://github.com/kotakanbe/goval-dictionary#usage" 
+time="Sep  3 02:45:33" level=info msg="[Reboot Required] akraino: 8 CVEs are detected with OVAL" 
+time="Sep  3 02:45:33" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with CPE" 
+time="Sep  3 02:45:33" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with GitHub Security Alerts" 
+time="Sep  3 02:45:34" level=info msg="[Reboot Required] akraino: 133 unfixed CVEs are detected with gost" 
+time="Sep  3 02:45:34" level=info msg="Fill CVE detailed information with CVE-DB" 
+time="Sep  3 02:45:36" level=info msg="Fill exploit information with Exploit-DB" 
+time="Sep  3 02:45:36" level=info msg="[Reboot Required] akraino: 0 exploits are detected" 
+[Reboot Required] akraino (centos7.8.2003)
+==========================================
+Total: 134 (High:16 Medium:86 Low:32 ?:0), 8/134 Fixed, 448 installed, 5 updatable, 0 exploits, en: 6, ja: 0 alerts
+
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+|      CVE-ID      | CVSS | ATTACK | POC |  CERT  |  FIXED  |                        NVD                        |
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+| CVE-2017-12652   |  9.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-12652   |
+| CVE-2019-5482    |  9.8 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5482    |
+| CVE-2019-11756   |  8.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11756   |
+| CVE-2019-19770   |  8.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19770   |
+| CVE-2017-16939   |  8.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-16939   |
+| CVE-2019-17006   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17006   |
+| CVE-2019-17498   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17498   |
+| CVE-2020-13790   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-13790   |
+| CVE-2020-14305   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14305   |
+| CVE-2017-1000253 |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-1000253 |
+| CVE-2017-18595   |  7.8 |  AV:L  |     |        |   fixed | https://nvd.nist.gov/vuln/detail/CVE-2017-18595   |
+| CVE-2018-20976   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2018-20976   |
+| CVE-2019-14814   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14814   |
+| CVE-2019-15927   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15927   |
+| CVE-2019-18276   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18276   |
+| CVE-2019-19447   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19447   |
+| CVE-2019-19523   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19523   |
+| CVE-2020-10757   |  7.8 |  AV:L  |     |        |   fixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10757   |
+| CVE-2020-12653   |  7.8 |  AV:L  |     |        |   fixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12653   |
+| CVE-2020-7053    |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-7053    |
+| CVE-2014-4043    |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-4043    |
+| CVE-2015-2059    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-2059    |
+| CVE-2019-15903   |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15903   |
+| CVE-2019-18197   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18197   |
+| CVE-2019-19768   |  7.5 |  AV:L  |     |        |   fixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19768   |
+| CVE-2019-19956   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19956   |
+| CVE-2019-20388   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20388   |
+| CVE-2019-20907   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20907   |
+| CVE-2019-5188    |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5188    |
+| CVE-2020-12243   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12243   |
+| CVE-2020-1749    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-1749    |
+| CVE-2020-7595    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-7595    |
+| CVE-2019-14866   |  7.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14866   |
+| CVE-2019-19527   |  7.2 |  AV:P  |     |        |   fixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19527   |
+| CVE-2019-20636   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20636   |
+| CVE-2020-12464   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12464   |
+| CVE-2020-11668   |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-11668   |
+| CVE-2020-12654   |  7.1 |  AV:A  |     |        |   fixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12654   |
+| CVE-2020-12825   |  7.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12825   |
+| CVE-2020-8648    |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8648    |
+| CVE-2020-9383    |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-9383    |
+| CVE-2019-15917   |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15917   |
+| CVE-2019-3842    |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-3842    |
+| CVE-2019-9458    |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-9458    |
+| CVE-2015-0247    |  6.9 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-0247    |
+| CVE-2019-19046   |  6.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19046   |
+| CVE-2019-19532   |  6.8 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19532   |
+| CVE-2020-12403   |  6.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12403   |
+| CVE-2020-2732    |  6.8 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-2732    |
+| CVE-2019-5094    |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5094    |
+| CVE-2019-9454    |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-9454    |
+| CVE-2020-12770   |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12770   |
+| CVE-2020-14344   |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14344   |
+| CVE-2020-14331   |  6.6 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14331   |
+| CVE-2019-11135   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11135   |
+| CVE-2019-17023   |  6.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17023   |
+| CVE-2019-17450   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17450   |
+| CVE-2019-5108    |  6.5 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5108    |
+| CVE-2020-10690   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10690   |
+| CVE-2020-8834    |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8834    |
+| CVE-2020-0305    |  6.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-0305    |
+| CVE-2019-16935   |  6.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16935   |
+| CVE-2019-19332   |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19332   |
+| CVE-2020-10751   |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10751   |
+| CVE-2020-8647    |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8647    |
+| CVE-2019-0117    |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-0117    |
+| CVE-2019-11139   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11139   |
+| CVE-2019-19927   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19927   |
+| CVE-2020-10742   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10742   |
+| CVE-2020-11565   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-11565   |
+| CVE-2020-10711   |  5.9 |  AV:N  |     |        |   fixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10711   |
+| CVE-2020-14145   |  5.9 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14145   |
+| CVE-2020-8649    |  5.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8649    |
+| CVE-2017-5715    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5715    |
+| CVE-2017-5753    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5753    |
+| CVE-2017-5754    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5754    |
+| CVE-2019-14615   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14615   |
+| CVE-2019-18808   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18808   |
+| CVE-2019-19055   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19055   |
+| CVE-2019-19767   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19767   |
+| CVE-2019-20054   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20054   |
+| CVE-2019-20095   |  5.5 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20095   |
+| CVE-2019-20794   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20794   |
+| CVE-2019-20811   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20811   |
+| CVE-2020-10769   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10769   |
+| CVE-2020-12655   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12655   |
+| CVE-2020-13844   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-13844   |
+| CVE-2020-14314   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14314   |
+| CVE-2020-24394   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-24394   |
+| CVE-2020-8832    |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8832    |
+| CVE-2020-10135   |  5.4 |  AV:A  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10135   |
+| CVE-2020-10942   |  5.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10942   |
+| CVE-2020-8177    |  5.4 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8177    |
+| CVE-2019-11727   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11727   |
+| CVE-2019-18282   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18282   |
+| CVE-2020-12826   |  5.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12826   |
+| CVE-2020-12888   |  5.3 |  AV:L  |     |        |   fixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12888   |
+| CVE-2020-14155   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14155   |
+| CVE-2020-14367   |  5.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14367   |
+| CVE-2014-4617    |  5.0 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-4617    |
+| CVE-2019-15217   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15217   |
+| CVE-2019-19063   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19063   |
+| CVE-2019-19524   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19524   |
+| CVE-2019-12614   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-12614   |
+| CVE-2019-15807   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15807   |
+| CVE-2019-16231   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16231   |
+| CVE-2019-16233   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16233   |
+| CVE-2019-16994   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16994   |
+| CVE-2019-19056   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19056   |
+| CVE-2019-19058   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19058   |
+| CVE-2019-19059   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19059   |
+| CVE-2019-19062   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19062   |
+| CVE-2020-12114   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12114   |
+| CVE-2020-14416   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14416   |
+| CVE-2019-19534   |  4.6 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19534   |
+| CVE-2020-10732   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10732   |
+| CVE-2020-10741   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10741   |
+| CVE-2020-10773   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10773   |
+| CVE-2020-12399   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12399   |
+| CVE-2020-12400   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12400   |
+| CVE-2020-12401   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12401   |
+| CVE-2020-12402   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12402   |
+| CVE-2020-6829    |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-6829    |
+| CVE-2020-10754   |  4.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10754   |
+| CVE-2020-16166   |  4.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-16166   |
+| CVE-2014-3591    |  4.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-3591    |
+| CVE-2020-15719   |  4.2 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-15719   |
+| CVE-2019-17053   |  4.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17053   |
+| CVE-2019-17055   |  4.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17055   |
+| CVE-2019-19126   |  3.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19126   |
+| CVE-2020-8231    |  3.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8231    |
+| CVE-2019-20386   |  2.4 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20386   |
+| CVE-2014-5270    |  2.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-5270    |
+| CVE-2015-3218    |  2.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-3218    |
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+
+time="Nov 22 06:51:23" level=info msg="Validating config..." 
+time="Nov 22 06:51:23" level=info msg="Loaded: /opt/akraino/validation/results/2020-11-22T06:51:11Z" 
+time="Nov 22 06:51:23" level=info msg="Validating db config..." 
+time="2020-11-22T06:51:23Z" level=info msg="-cvedb-type: sqlite3, -cvedb-url: , -cvedb-path: /opt/akraino/validation/tests/os/vuls/cve.sqlite3"
+time="2020-11-22T06:51:23Z" level=info msg="-ovaldb-type: sqlite3, -ovaldb-url: , -ovaldb-path: /opt/akraino/validation/tests/os/vuls/oval_centos_7.sqlite3"
+time="2020-11-22T06:51:23Z" level=info msg="-gostdb-type: sqlite3, -gostdb-url: , -gostdb-path: /opt/akraino/validation/tests/os/vuls/gost_centos.sqlite3"
+time="2020-11-22T06:51:23Z" level=info msg="-exploitdb-type: sqlite3, -exploitdb-url: , -exploitdb-path: /opt/akraino/validation/go-exploitdb.sqlite3"
+t=2020-11-22T06:51:23+0000 lvl=info msg="Opening DB." db=sqlite3
+t=2020-11-22T06:51:23+0000 lvl=info msg="Migrating DB." db=sqlite3
+time="Nov 22 06:51:23" level=warning msg="--exploitdb-path=/opt/akraino/validation/go-exploitdb.sqlite3 file not found. Fetch go-exploit-db before reporting if you want to display exploit codes of detected CVE-IDs. For details, see `https://github.com/mozqnet/go-exploitdb`" 
+time="Nov 22 06:51:23" level=info msg="akraino: 0 CVEs are detected with Library" 
+time="Nov 22 06:51:23" level=warning msg="OVAL for redhat 7.8.2003 is old, last modified is 2020-08-23 01:12:32.751941445 +0000 UTC. It's recommended to update OVAL to improve scanning accuracy. How to update OVAL database, see https://github.com/kotakanbe/goval-dictionary#usage" 
+time="Nov 22 06:51:26" level=info msg="akraino: 0 CVEs are detected with OVAL" 
+time="Nov 22 06:51:26" level=info msg="akraino: 0 CVEs are detected with CPE" 
+time="Nov 22 06:51:26" level=info msg="akraino: 0 CVEs are detected with GitHub Security Alerts" 
+time="Nov 22 06:51:27" level=info msg="akraino: 133 unfixed CVEs are detected with gost" 
+time="Nov 22 06:51:27" level=info msg="Fill CVE detailed information with CVE-DB" 
+time="Nov 22 06:51:29" level=info msg="Fill exploit information with Exploit-DB" 
+time="Nov 22 06:51:29" level=info msg="akraino: 0 exploits are detected" 
+akraino (centos7.8.2003)
+========================
+Total: 126 (High:14 Medium:80 Low:32 ?:0), 0/126 Fixed, 455 installed, 157 updatable, 0 exploits, en: 6, ja: 0 alerts
+
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+|      CVE-ID      | CVSS | ATTACK | POC |  CERT  |  FIXED  |                        NVD                        |
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+| CVE-2017-12652   |  9.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-12652   |
+| CVE-2019-5482    |  9.8 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5482    |
+| CVE-2019-11756   |  8.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11756   |
+| CVE-2019-19770   |  8.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19770   |
+| CVE-2017-16939   |  8.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-16939   |
+| CVE-2019-17006   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17006   |
+| CVE-2019-17498   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17498   |
+| CVE-2020-13790   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-13790   |
+| CVE-2020-14305   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14305   |
+| CVE-2017-1000253 |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-1000253 |
+| CVE-2018-20976   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2018-20976   |
+| CVE-2019-14814   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14814   |
+| CVE-2019-15927   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15927   |
+| CVE-2019-18276   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18276   |
+| CVE-2019-19447   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19447   |
+| CVE-2019-19523   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19523   |
+| CVE-2020-7053    |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-7053    |
+| CVE-2014-4043    |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-4043    |
+| CVE-2015-2059    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-2059    |
+| CVE-2019-15903   |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15903   |
+| CVE-2019-18197   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18197   |
+| CVE-2019-19956   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19956   |
+| CVE-2019-20388   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20388   |
+| CVE-2019-20907   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20907   |
+| CVE-2019-5188    |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5188    |
+| CVE-2020-12243   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12243   |
+| CVE-2020-1749    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-1749    |
+| CVE-2020-7595    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-7595    |
+| CVE-2019-14866   |  7.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14866   |
+| CVE-2019-20636   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20636   |
+| CVE-2020-12464   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12464   |
+| CVE-2020-11668   |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-11668   |
+| CVE-2020-12825   |  7.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12825   |
+| CVE-2020-8648    |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8648    |
+| CVE-2020-9383    |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-9383    |
+| CVE-2019-15917   |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15917   |
+| CVE-2019-3842    |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-3842    |
+| CVE-2019-9458    |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-9458    |
+| CVE-2015-0247    |  6.9 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-0247    |
+| CVE-2019-19046   |  6.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19046   |
+| CVE-2019-19532   |  6.8 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19532   |
+| CVE-2020-12403   |  6.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12403   |
+| CVE-2020-2732    |  6.8 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-2732    |
+| CVE-2019-5094    |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5094    |
+| CVE-2019-9454    |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-9454    |
+| CVE-2020-12770   |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12770   |
+| CVE-2020-14344   |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14344   |
+| CVE-2020-14331   |  6.6 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14331   |
+| CVE-2019-11135   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11135   |
+| CVE-2019-17023   |  6.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17023   |
+| CVE-2019-17450   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17450   |
+| CVE-2019-5108    |  6.5 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5108    |
+| CVE-2020-10690   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10690   |
+| CVE-2020-8834    |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8834    |
+| CVE-2020-0305    |  6.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-0305    |
+| CVE-2019-16935   |  6.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16935   |
+| CVE-2019-19332   |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19332   |
+| CVE-2020-10751   |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10751   |
+| CVE-2020-8647    |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8647    |
+| CVE-2019-0117    |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-0117    |
+| CVE-2019-11139   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11139   |
+| CVE-2019-19927   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19927   |
+| CVE-2020-10742   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10742   |
+| CVE-2020-11565   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-11565   |
+| CVE-2020-14145   |  5.9 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14145   |
+| CVE-2020-8649    |  5.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8649    |
+| CVE-2017-5715    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5715    |
+| CVE-2017-5753    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5753    |
+| CVE-2017-5754    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5754    |
+| CVE-2019-14615   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14615   |
+| CVE-2019-18808   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18808   |
+| CVE-2019-19055   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19055   |
+| CVE-2019-19767   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19767   |
+| CVE-2019-20054   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20054   |
+| CVE-2019-20095   |  5.5 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20095   |
+| CVE-2019-20794   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20794   |
+| CVE-2019-20811   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20811   |
+| CVE-2020-10769   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10769   |
+| CVE-2020-12655   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12655   |
+| CVE-2020-13844   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-13844   |
+| CVE-2020-14314   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14314   |
+| CVE-2020-24394   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-24394   |
+| CVE-2020-8832    |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8832    |
+| CVE-2020-10135   |  5.4 |  AV:A  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10135   |
+| CVE-2020-10942   |  5.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10942   |
+| CVE-2020-8177    |  5.4 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8177    |
+| CVE-2019-11727   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11727   |
+| CVE-2019-18282   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18282   |
+| CVE-2020-12826   |  5.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12826   |
+| CVE-2020-14155   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14155   |
+| CVE-2020-14367   |  5.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14367   |
+| CVE-2014-4617    |  5.0 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-4617    |
+| CVE-2019-15217   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15217   |
+| CVE-2019-19063   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19063   |
+| CVE-2019-19524   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19524   |
+| CVE-2019-12614   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-12614   |
+| CVE-2019-15807   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15807   |
+| CVE-2019-16231   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16231   |
+| CVE-2019-16233   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16233   |
+| CVE-2019-16994   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16994   |
+| CVE-2019-19056   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19056   |
+| CVE-2019-19058   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19058   |
+| CVE-2019-19059   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19059   |
+| CVE-2019-19062   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19062   |
+| CVE-2020-12114   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12114   |
+| CVE-2020-14416   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14416   |
+| CVE-2019-19534   |  4.6 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19534   |
+| CVE-2020-10732   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10732   |
+| CVE-2020-10741   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10741   |
+| CVE-2020-10773   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10773   |
+| CVE-2020-12399   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12399   |
+| CVE-2020-12400   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12400   |
+| CVE-2020-12401   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12401   |
+| CVE-2020-12402   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12402   |
+| CVE-2020-6829    |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-6829    |
+| CVE-2020-10754   |  4.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10754   |
+| CVE-2020-16166   |  4.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-16166   |
+| CVE-2014-3591    |  4.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-3591    |
+| CVE-2020-15719   |  4.2 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-15719   |
+| CVE-2019-17053   |  4.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17053   |
+| CVE-2019-17055   |  4.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17055   |
+| CVE-2019-19126   |  3.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19126   |
+| CVE-2020-8231    |  3.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8231    |
+| CVE-2019-20386   |  2.4 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20386   |
+| CVE-2014-5270    |  2.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-5270    |
+| CVE-2015-3218    |  2.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-3218    |
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+
+time="Nov 24 03:33:52" level=info msg="Validating config..." 
+time="Nov 24 03:33:52" level=info msg="Loaded: /opt/akraino/validation/results/2020-11-24T03:33:13Z" 
+time="Nov 24 03:33:52" level=info msg="Validating db config..." 
+time="2020-11-24T03:33:52Z" level=info msg="-cvedb-type: sqlite3, -cvedb-url: , -cvedb-path: /opt/akraino/validation/tests/os/vuls/cve.sqlite3"
+time="2020-11-24T03:33:52Z" level=info msg="-ovaldb-type: sqlite3, -ovaldb-url: , -ovaldb-path: /opt/akraino/validation/tests/os/vuls/oval_centos_7.sqlite3"
+time="2020-11-24T03:33:52Z" level=info msg="-gostdb-type: sqlite3, -gostdb-url: , -gostdb-path: /opt/akraino/validation/tests/os/vuls/gost_centos.sqlite3"
+time="2020-11-24T03:33:52Z" level=info msg="-exploitdb-type: sqlite3, -exploitdb-url: , -exploitdb-path: /opt/akraino/validation/go-exploitdb.sqlite3"
+t=2020-11-24T03:33:52+0000 lvl=info msg="Opening DB." db=sqlite3
+t=2020-11-24T03:33:52+0000 lvl=info msg="Migrating DB." db=sqlite3
+time="Nov 24 03:33:52" level=warning msg="--exploitdb-path=/opt/akraino/validation/go-exploitdb.sqlite3 file not found. Fetch go-exploit-db before reporting if you want to display exploit codes of detected CVE-IDs. For details, see `https://github.com/mozqnet/go-exploitdb`" 
+time="Nov 24 03:33:52" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with Library" 
+time="Nov 24 03:33:52" level=warning msg="OVAL for redhat 7.9.2009 is old, last modified is 2020-08-23 01:12:32.751941445 +0000 UTC. It's recommended to update OVAL to improve scanning accuracy. How to update OVAL database, see https://github.com/kotakanbe/goval-dictionary#usage" 
+time="Nov 24 03:33:54" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with OVAL" 
+time="Nov 24 03:33:54" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with CPE" 
+time="Nov 24 03:33:54" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with GitHub Security Alerts" 
+time="Nov 24 03:33:56" level=info msg="[Reboot Required] akraino: 135 unfixed CVEs are detected with gost" 
+time="Nov 24 03:33:56" level=info msg="Fill CVE detailed information with CVE-DB" 
+time="Nov 24 03:33:57" level=info msg="Fill exploit information with Exploit-DB" 
+time="Nov 24 03:33:57" level=info msg="[Reboot Required] akraino: 0 exploits are detected" 
+[Reboot Required] akraino (centos7.9.2009)
+==========================================
+Total: 127 (High:14 Medium:81 Low:32 ?:0), 0/127 Fixed, 461 installed, 0 updatable, 0 exploits, en: 6, ja: 0 alerts
+
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+|      CVE-ID      | CVSS | ATTACK | POC |  CERT  |  FIXED  |                        NVD                        |
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+| CVE-2017-12652   |  9.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-12652   |
+| CVE-2019-5482    |  9.8 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5482    |
+| CVE-2019-11756   |  8.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11756   |
+| CVE-2019-19770   |  8.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19770   |
+| CVE-2017-16939   |  8.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-16939   |
+| CVE-2019-17006   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17006   |
+| CVE-2019-17498   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17498   |
+| CVE-2020-13790   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-13790   |
+| CVE-2020-14305   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14305   |
+| CVE-2017-1000253 |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-1000253 |
+| CVE-2018-20976   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2018-20976   |
+| CVE-2019-14814   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14814   |
+| CVE-2019-15927   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15927   |
+| CVE-2019-18276   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18276   |
+| CVE-2019-19447   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19447   |
+| CVE-2019-19523   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19523   |
+| CVE-2020-7053    |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-7053    |
+| CVE-2014-4043    |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-4043    |
+| CVE-2015-2059    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-2059    |
+| CVE-2019-15903   |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15903   |
+| CVE-2019-18197   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18197   |
+| CVE-2019-19956   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19956   |
+| CVE-2019-20388   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20388   |
+| CVE-2019-20907   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20907   |
+| CVE-2019-5188    |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5188    |
+| CVE-2020-12243   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12243   |
+| CVE-2020-1749    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-1749    |
+| CVE-2020-7595    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-7595    |
+| CVE-2019-14866   |  7.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14866   |
+| CVE-2019-20636   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20636   |
+| CVE-2020-12464   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12464   |
+| CVE-2020-11668   |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-11668   |
+| CVE-2020-12825   |  7.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12825   |
+| CVE-2020-8648    |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8648    |
+| CVE-2020-9383    |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-9383    |
+| CVE-2019-15917   |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15917   |
+| CVE-2019-3842    |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-3842    |
+| CVE-2019-9458    |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-9458    |
+| CVE-2015-0247    |  6.9 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-0247    |
+| CVE-2019-19046   |  6.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19046   |
+| CVE-2019-19532   |  6.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19532   |
+| CVE-2020-12403   |  6.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12403   |
+| CVE-2020-2732    |  6.8 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-2732    |
+| CVE-2019-5094    |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5094    |
+| CVE-2019-9454    |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-9454    |
+| CVE-2020-12770   |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12770   |
+| CVE-2020-14344   |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14344   |
+| CVE-2020-14331   |  6.6 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14331   |
+| CVE-2019-11135   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11135   |
+| CVE-2019-17023   |  6.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17023   |
+| CVE-2019-17450   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17450   |
+| CVE-2019-5108    |  6.5 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5108    |
+| CVE-2020-10690   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10690   |
+| CVE-2020-8834    |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8834    |
+| CVE-2020-0305    |  6.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-0305    |
+| CVE-2019-16935   |  6.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16935   |
+| CVE-2019-19332   |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19332   |
+| CVE-2020-10751   |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10751   |
+| CVE-2020-8647    |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8647    |
+| CVE-2019-0117    |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-0117    |
+| CVE-2019-11139   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11139   |
+| CVE-2019-19927   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19927   |
+| CVE-2020-10742   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10742   |
+| CVE-2020-11565   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-11565   |
+| CVE-2020-14145   |  5.9 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14145   |
+| CVE-2020-14422   |  5.9 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14422   |
+| CVE-2020-8649    |  5.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8649    |
+| CVE-2017-5715    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5715    |
+| CVE-2017-5753    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5753    |
+| CVE-2017-5754    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5754    |
+| CVE-2019-14615   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14615   |
+| CVE-2019-18808   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18808   |
+| CVE-2019-19055   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19055   |
+| CVE-2019-19767   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19767   |
+| CVE-2019-20054   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20054   |
+| CVE-2019-20095   |  5.5 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20095   |
+| CVE-2019-20794   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20794   |
+| CVE-2019-20811   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20811   |
+| CVE-2020-10769   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10769   |
+| CVE-2020-12655   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12655   |
+| CVE-2020-13844   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-13844   |
+| CVE-2020-14314   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14314   |
+| CVE-2020-24394   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-24394   |
+| CVE-2020-8832    |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8832    |
+| CVE-2020-10135   |  5.4 |  AV:A  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10135   |
+| CVE-2020-10942   |  5.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10942   |
+| CVE-2020-8177    |  5.4 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8177    |
+| CVE-2019-11727   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11727   |
+| CVE-2019-18282   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18282   |
+| CVE-2020-12826   |  5.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12826   |
+| CVE-2020-14155   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14155   |
+| CVE-2020-14367   |  5.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14367   |
+| CVE-2014-4617    |  5.0 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-4617    |
+| CVE-2019-15217   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15217   |
+| CVE-2019-19063   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19063   |
+| CVE-2019-19524   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19524   |
+| CVE-2019-12614   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-12614   |
+| CVE-2019-15807   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15807   |
+| CVE-2019-16231   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16231   |
+| CVE-2019-16233   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16233   |
+| CVE-2019-16994   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16994   |
+| CVE-2019-19056   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19056   |
+| CVE-2019-19058   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19058   |
+| CVE-2019-19059   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19059   |
+| CVE-2019-19062   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19062   |
+| CVE-2020-12114   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12114   |
+| CVE-2020-14416   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14416   |
+| CVE-2019-19534   |  4.6 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19534   |
+| CVE-2020-10732   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10732   |
+| CVE-2020-10741   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10741   |
+| CVE-2020-10773   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10773   |
+| CVE-2020-12399   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12399   |
+| CVE-2020-12400   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12400   |
+| CVE-2020-12401   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12401   |
+| CVE-2020-12402   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12402   |
+| CVE-2020-6829    |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-6829    |
+| CVE-2020-10754   |  4.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10754   |
+| CVE-2020-16166   |  4.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-16166   |
+| CVE-2014-3591    |  4.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-3591    |
+| CVE-2020-15719   |  4.2 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-15719   |
+| CVE-2019-17053   |  4.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17053   |
+| CVE-2019-17055   |  4.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17055   |
+| CVE-2019-19126   |  3.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19126   |
+| CVE-2020-8231    |  3.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8231    |
+| CVE-2019-20386   |  2.4 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20386   |
+| CVE-2014-5270    |  2.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-5270    |
+| CVE-2015-3218    |  2.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-3218    |
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+
+time="Nov 25 04:22:57" level=info msg="Validating config..." 
+time="Nov 25 04:22:57" level=info msg="Loaded: /opt/akraino/validation/results/2020-11-25T04:22:39Z" 
+time="Nov 25 04:22:57" level=info msg="Validating db config..." 
+time="2020-11-25T04:22:57Z" level=info msg="-cvedb-type: sqlite3, -cvedb-url: , -cvedb-path: /opt/akraino/validation/tests/os/vuls/cve.sqlite3"
+time="2020-11-25T04:22:57Z" level=info msg="-ovaldb-type: sqlite3, -ovaldb-url: , -ovaldb-path: /opt/akraino/validation/tests/os/vuls/oval_centos_7.sqlite3"
+time="2020-11-25T04:22:57Z" level=info msg="-gostdb-type: sqlite3, -gostdb-url: , -gostdb-path: /opt/akraino/validation/tests/os/vuls/gost_centos.sqlite3"
+time="2020-11-25T04:22:57Z" level=info msg="-exploitdb-type: sqlite3, -exploitdb-url: , -exploitdb-path: /opt/akraino/validation/go-exploitdb.sqlite3"
+t=2020-11-25T04:22:57+0000 lvl=info msg="Opening DB." db=sqlite3
+t=2020-11-25T04:22:57+0000 lvl=info msg="Migrating DB." db=sqlite3
+time="Nov 25 04:22:57" level=warning msg="--exploitdb-path=/opt/akraino/validation/go-exploitdb.sqlite3 file not found. Fetch go-exploit-db before reporting if you want to display exploit codes of detected CVE-IDs. For details, see `https://github.com/mozqnet/go-exploitdb`" 
+time="Nov 25 04:22:57" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with Library" 
+time="Nov 25 04:22:57" level=warning msg="OVAL for redhat 7.9.2009 is old, last modified is 2020-08-23 01:12:32.751941445 +0000 UTC. It's recommended to update OVAL to improve scanning accuracy. How to update OVAL database, see https://github.com/kotakanbe/goval-dictionary#usage" 
+time="Nov 25 04:22:59" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with OVAL" 
+time="Nov 25 04:22:59" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with CPE" 
+time="Nov 25 04:22:59" level=info msg="[Reboot Required] akraino: 0 CVEs are detected with GitHub Security Alerts" 
+time="Nov 25 04:23:01" level=info msg="[Reboot Required] akraino: 135 unfixed CVEs are detected with gost" 
+time="Nov 25 04:23:01" level=info msg="Fill CVE detailed information with CVE-DB" 
+time="Nov 25 04:23:02" level=info msg="Fill exploit information with Exploit-DB" 
+time="Nov 25 04:23:02" level=info msg="[Reboot Required] akraino: 0 exploits are detected" 
+[Reboot Required] akraino (centos7.9.2009)
+==========================================
+Total: 127 (High:14 Medium:81 Low:32 ?:0), 0/127 Fixed, 461 installed, 0 updatable, 0 exploits, en: 6, ja: 0 alerts
+
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+|      CVE-ID      | CVSS | ATTACK | POC |  CERT  |  FIXED  |                        NVD                        |
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+| CVE-2017-12652   |  9.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-12652   |
+| CVE-2019-5482    |  9.8 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5482    |
+| CVE-2019-11756   |  8.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11756   |
+| CVE-2019-19770   |  8.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19770   |
+| CVE-2017-16939   |  8.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-16939   |
+| CVE-2019-17006   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17006   |
+| CVE-2019-17498   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17498   |
+| CVE-2020-13790   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-13790   |
+| CVE-2020-14305   |  8.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14305   |
+| CVE-2017-1000253 |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-1000253 |
+| CVE-2018-20976   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2018-20976   |
+| CVE-2019-14814   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14814   |
+| CVE-2019-15927   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15927   |
+| CVE-2019-18276   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18276   |
+| CVE-2019-19447   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19447   |
+| CVE-2019-19523   |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19523   |
+| CVE-2020-7053    |  7.8 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-7053    |
+| CVE-2014-4043    |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-4043    |
+| CVE-2015-2059    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-2059    |
+| CVE-2019-15903   |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15903   |
+| CVE-2019-18197   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18197   |
+| CVE-2019-19956   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19956   |
+| CVE-2019-20388   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20388   |
+| CVE-2019-20907   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20907   |
+| CVE-2019-5188    |  7.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5188    |
+| CVE-2020-12243   |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12243   |
+| CVE-2020-1749    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-1749    |
+| CVE-2020-7595    |  7.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-7595    |
+| CVE-2019-14866   |  7.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14866   |
+| CVE-2019-20636   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20636   |
+| CVE-2020-12464   |  7.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12464   |
+| CVE-2020-11668   |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-11668   |
+| CVE-2020-12825   |  7.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12825   |
+| CVE-2020-8648    |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8648    |
+| CVE-2020-9383    |  7.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-9383    |
+| CVE-2019-15917   |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15917   |
+| CVE-2019-3842    |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-3842    |
+| CVE-2019-9458    |  7.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-9458    |
+| CVE-2015-0247    |  6.9 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-0247    |
+| CVE-2019-19046   |  6.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19046   |
+| CVE-2019-19532   |  6.8 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19532   |
+| CVE-2020-12403   |  6.8 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12403   |
+| CVE-2020-2732    |  6.8 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-2732    |
+| CVE-2019-5094    |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5094    |
+| CVE-2019-9454    |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-9454    |
+| CVE-2020-12770   |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12770   |
+| CVE-2020-14344   |  6.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14344   |
+| CVE-2020-14331   |  6.6 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14331   |
+| CVE-2019-11135   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11135   |
+| CVE-2019-17023   |  6.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17023   |
+| CVE-2019-17450   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17450   |
+| CVE-2019-5108    |  6.5 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-5108    |
+| CVE-2020-10690   |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10690   |
+| CVE-2020-8834    |  6.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8834    |
+| CVE-2020-0305    |  6.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-0305    |
+| CVE-2019-16935   |  6.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16935   |
+| CVE-2019-19332   |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19332   |
+| CVE-2020-10751   |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10751   |
+| CVE-2020-8647    |  6.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8647    |
+| CVE-2019-0117    |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-0117    |
+| CVE-2019-11139   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11139   |
+| CVE-2019-19927   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19927   |
+| CVE-2020-10742   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10742   |
+| CVE-2020-11565   |  6.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-11565   |
+| CVE-2020-14145   |  5.9 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14145   |
+| CVE-2020-14422   |  5.9 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14422   |
+| CVE-2020-8649    |  5.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8649    |
+| CVE-2017-5715    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5715    |
+| CVE-2017-5753    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5753    |
+| CVE-2017-5754    |  5.6 |  AV:L  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2017-5754    |
+| CVE-2019-14615   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-14615   |
+| CVE-2019-18808   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18808   |
+| CVE-2019-19055   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19055   |
+| CVE-2019-19767   |  5.5 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19767   |
+| CVE-2019-20054   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20054   |
+| CVE-2019-20095   |  5.5 |  AV:A  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20095   |
+| CVE-2019-20794   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20794   |
+| CVE-2019-20811   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20811   |
+| CVE-2020-10769   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10769   |
+| CVE-2020-12655   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12655   |
+| CVE-2020-13844   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-13844   |
+| CVE-2020-14314   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14314   |
+| CVE-2020-24394   |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-24394   |
+| CVE-2020-8832    |  5.5 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8832    |
+| CVE-2020-10135   |  5.4 |  AV:A  |     | USCERT | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10135   |
+| CVE-2020-10942   |  5.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10942   |
+| CVE-2020-8177    |  5.4 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8177    |
+| CVE-2019-11727   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-11727   |
+| CVE-2019-18282   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-18282   |
+| CVE-2020-12826   |  5.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12826   |
+| CVE-2020-14155   |  5.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14155   |
+| CVE-2020-14367   |  5.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14367   |
+| CVE-2014-4617    |  5.0 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-4617    |
+| CVE-2019-15217   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15217   |
+| CVE-2019-19063   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19063   |
+| CVE-2019-19524   |  4.9 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19524   |
+| CVE-2019-12614   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-12614   |
+| CVE-2019-15807   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-15807   |
+| CVE-2019-16231   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16231   |
+| CVE-2019-16233   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16233   |
+| CVE-2019-16994   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-16994   |
+| CVE-2019-19056   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19056   |
+| CVE-2019-19058   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19058   |
+| CVE-2019-19059   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19059   |
+| CVE-2019-19062   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19062   |
+| CVE-2020-12114   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12114   |
+| CVE-2020-14416   |  4.7 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-14416   |
+| CVE-2019-19534   |  4.6 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19534   |
+| CVE-2020-10732   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10732   |
+| CVE-2020-10741   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10741   |
+| CVE-2020-10773   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10773   |
+| CVE-2020-12399   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12399   |
+| CVE-2020-12400   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12400   |
+| CVE-2020-12401   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12401   |
+| CVE-2020-12402   |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-12402   |
+| CVE-2020-6829    |  4.4 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-6829    |
+| CVE-2020-10754   |  4.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-10754   |
+| CVE-2020-16166   |  4.3 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-16166   |
+| CVE-2014-3591    |  4.2 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-3591    |
+| CVE-2020-15719   |  4.2 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-15719   |
+| CVE-2019-17053   |  4.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17053   |
+| CVE-2019-17055   |  4.0 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-17055   |
+| CVE-2019-19126   |  3.3 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-19126   |
+| CVE-2020-8231    |  3.1 |  AV:N  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2020-8231    |
+| CVE-2019-20386   |  2.4 |  AV:P  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2019-20386   |
+| CVE-2014-5270    |  2.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2014-5270    |
+| CVE-2015-3218    |  2.1 |  AV:L  |     |        | unfixed | https://nvd.nist.gov/vuln/detail/CVE-2015-3218    |
++------------------+------+--------+-----+--------+---------+---------------------------------------------------+
+
