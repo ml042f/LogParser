@@ -22,7 +22,6 @@ def check_mult_logs(log_list):
     if cve_count > 1:
         return True
 
-
 def get_os(log):
     regex = re.compile(r"centos\d+\.\d*|ubuntu\d+\.\d*")
     os_version = regex.search(log)
@@ -62,7 +61,7 @@ def main(log_path, req_path, blueprint_name, logging):
 
     for cve in cve_list:
         if cve in requirements['vuls'][os_version]:
-            print(cve + ": failed in scan: EXCEPTION GRANTED")
+            print(cve + ": failed in scan: EXCEPTION GRANTED" + "\n\tCVSS: " + requirements['vuls'][os_version][cve][0] + "\n\tPatch available:" + requirements['vuls'][os_version][cve][1])
         else:
             print(cve + ": failed in scan: NO EXCEPTION")
 
