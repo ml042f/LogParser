@@ -1,5 +1,12 @@
 import json
 
+class bcolors:
+    OK = '\033[92m' #GREEN
+    WARNING = '\033[93m' #YELLOW
+    FAIL = '\033[91m' #RED
+    INFO = '\u001b[36m' #CYAN
+    RESET = '\033[0m' #RESET COLOR
+
 def load_log(path_to_log, lines_or_string = True):
     '''returns string of logfile specified in path:
     ex: "lynislogs/cvb_r4.log"

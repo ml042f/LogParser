@@ -14,12 +14,7 @@ parser.add_argument("-b", "--blueprint_name", help="input blueprint name", type=
 parser.add_argument("-l", "--logging", help="set this flag to enable writing to log lynis_eval_[blueprintname]_[date_time].log", action='store_true')
 args = parser.parse_args()
 
-class bcolors:
-    OK = '\033[92m' #GREEN
-    WARNING = '\033[93m' #YELLOW
-    FAIL = '\033[91m' #RED
-    INFO = '\u001b[36m' #CYAN
-    RESET = '\033[0m' #RESET COLOR
+
 
 def make_raw_string(path_to_file):
     '''returns raw string of inputted text
@@ -45,9 +40,9 @@ def find_compilers(path_to_log):
 
 def verify_complete(full_text):
     if 'Program ended successfully' not in full_text:
-        print(bcolors.WARNING + "NO PROGRAM END DETECTED" + bcolors.RESET)
+        print(load_files.bcolors.WARNING + "NO PROGRAM END DETECTED" + load_files.bcolors.RESET)
     if 'Lynis ended successfully' not in full_text:
-        print(bcolors.WARNING + "NO LYNIS END DETECTED" + bcolors.RESET)
+        print(load_files.bcolors.WARNING + "NO LYNIS END DETECTED" + load_files.bcolors.RESET)
 
 class scores:
     REGEXES = [
@@ -62,26 +57,26 @@ class scores:
     def print_scores(full_text, regex_args):
         compiled = re.compile(regex_args)
         index = compiled.search(full_text)
-        print(bcolors.INFO + index.group() + bcolors.RESET)
+        print(load_files.bcolors.INFO + index.group() + load_files.bcolors.RESET)
 
     def print_version_build_date(full_text):
         regex = re.compile('Starting Lynis.*')
         build = regex.search(full_text)
         build = re.search("Lynis.*", build.group())
-        print(bcolors.INFO + "Build: " + build.group() + bcolors.RESET)
+        print(load_files.bcolors.INFO + "Build: " + build.group() + load_files.bcolors.RESET)
 
 def check_failure(testname, log_entry, reqs):
     if log_entry == None:
-        print(bcolors.WARNING + testname + ": NOT PRESENT IN THIS LOG" + bcolors.RESET)
+        print(load_files.bcolors.WARNING + testname + ": NOT PRESENT IN THIS LOG" + load_files.bcolors.RESET)
         return False
     if 'assigned partial' in log_entry.group():
-        print(bcolors.FAIL + testname + ": FAILED" + bcolors.RESET)
+        print(load_files.bcolors.FAIL + testname + ": FAILED" + load_files.bcolors.RESET)
         if testname in reqs['lynis_recs']:
             for items in reqs['lynis_recs'][testname]:
                 print("\t" + items)
         return True
     else:
-        print(bcolors.OK + testname + ": SUCCESS" + bcolors.RESET)
+        print(load_files.bcolors.OK + testname + ": SUCCESS" + load_files.bcolors.RESET)
         return False
 
 def get_results(fulltext):
@@ -123,7 +118,7 @@ def main(log_path, phase, req_path, blueprint_name, logging):
 
 
     verify_complete(log_string)
-    print(bcolors.INFO + blueprint_name + ": Lynis Evaluation " + now + bcolors.RESET)
+    print(load_files.bcolors.INFO + blueprint_name + ": Lynis Evaluation " + now + load_files.bcolors.RESET)
     scores.print_version_build_date(log_string)
     for expression in scores.REGEXES:
         scores.print_scores(log_string, expression)
