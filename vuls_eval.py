@@ -23,10 +23,12 @@ def check_mult_logs(log_list):
         return True
 
 def get_os(log):
-    regex = re.compile(r"centos\d+\.\d*|ubuntu\d+\.\d*")
-    os_version = regex.search(log)
-    print(load_files.bcolors.INFO + "Scan for OS: " + os_version.group() + load_files.bcolors.RESET)
-    return re.sub('[^a-zA-Z0-9]+', '', os_version.group())
+    printable_regex = re.compile(r"centos\d+\.\d*\.\d*|ubuntu\d+\.\d*")
+    searchable_regex = re.compile(r"centos\d+\.\d*|ubuntu\d+\.\d*")
+    printable_os = printable_regex.search(log)
+    searchable_os = searchable_regex.search(log)
+    print(load_files.bcolors.INFO + "Scan for OS: " + printable_os.group() + load_files.bcolors.RESET)
+    return re.sub('[^a-zA-Z0-9]+', '', searchable_os.group())
 
 def check_cvss(log_lines):
     cve_list = []
@@ -56,12 +58,12 @@ def main(log_path, req_path, blueprint_name, logging):
         log_file = open(filename, "x")
         sys.stdout = log_file
     
-    os_version = get_os(log_string)
+    printable_os = get_os(log_string)
     cve_list = check_cvss(log_list)
 
     for cve in cve_list:
-        if cve in requirements['vuls'][os_version]:
-            print(load_files.bcolors.OK + cve + ": failed in scan: EXCEPTION GRANTED" + load_files.bcolors.RESET + "\n\tCVSS: " + requirements['vuls'][os_version][cve][0] + "\n\tPatch available: " + requirements['vuls'][os_version][cve][1])
+        if cve in requirements['vuls'][printable_os]:
+            print(load_files.bcolors.OK + cve + ": failed in scan: EXCEPTION GRANTED" + load_files.bcolors.RESET + "\n\tCVSS: " + requirements['vuls'][printable_os][cve][0] + "\n\tPatch available: " + requirements['vuls'][printable_os][cve][1])
         else:
             print(load_files.bcolors.FAIL + cve + ": failed in scan: NO EXCEPTION" + load_files.bcolors.RESET)
 
