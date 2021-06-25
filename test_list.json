@@ -94,7 +94,6 @@
         "centos78": {
             "CVE-2019-15505": ["Moderate 8.0", "No"], 
             "CVE-2014-9939": ["Low 1.2", "No"], 
-            "CVE-2017-12652": ["Low 3.7", "Fixed in RHEL 7 But not in CentOS 7.8 as of 9/29/2020"], 
             "CVE-2018-16428": ["Low 5.1", "No There is no proper documents from CENTOS for unfixed vulnerabilities. We cannot compare/refer RHEL 7 docs with CENTOS 7.8 since, RHEL is completely different OS"], 
             "CVE-2019-11068": ["Moderate 6.8", "Fixed in RHEL 7 But not in CentOS 7.8 as of 9/29/2020"], 
             "CVE-2019-12450": ["Moderate 6.6", "Fixed in RHEL 7 But not in CentOS 7.8 as of 9/29/2020"], 
