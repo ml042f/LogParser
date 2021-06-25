@@ -17,7 +17,7 @@ args = parser.parse_args()
 def check_mult_logs(log_list):
     cve_count = 0
     for line in log_list:
-        if("CVE-ID" in line):
+        if("CVSS" in line):
             cve_count += 1
     if cve_count > 1:
         return True
