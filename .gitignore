@@ -135,3 +135,5 @@ test_log.log
 make_vuls_json.py
 jsonned_vuls.json
 vuls_list
+make_kube_json.py
+kube_list.txt

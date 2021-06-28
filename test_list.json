@@ -176,15 +176,129 @@
             "CVE-2017-12652": ["Low 3.7", "No"], 
             "CVE-2019-5482": ["Moderate 6.3", "No"]}},
     "kube-hunter":{
-        "incubation":[
-
-        ],
-        "maturity":[
-
-        ],
-        "core":[
-
-        ]
+        "incubation":{
+            "KHV002 - Kubernetes version disclosure": [
+                "Disable --enable-debugging-handlers kubelet flag.\n"
+            ],
+            "KHV003 - Azure Metadata Exposure": [],
+            "KHV004 - Azure SPN Exposure": [],
+            "KHV005 - Access to Kubernetes API": [],
+            "KHV006 - Insecure (HTTP) access to Kubernetes API": [
+                "Ensure your setup is exposing kube-api only on an HTTPS port.",
+                "Do not enable kube-apis --insecure-port flag in production.\n"
+            ],
+            "KHV007 - Specific Access to Kubernetes API": [
+                "Review the RBAC permissions to Kubernetes API server for the anonymous and default service account.",
+                "Depending on the Kubernetes cluster setup and preferences this may not be a problem.\n"
+            ],
+            "KHV020 - Possible Arp Spoof": [
+                "Consider dropping the NET_RAW capability from your pods using Pod.spec.securityContext.capabilities\n"
+            ],
+            "KHV021 - Certificate Includes Email Address": [
+                "Do not include email address in the Kubernetes API server certificate. (You should continue to use certificates to secure the API Server!)\n"
+            ],
+            "KHV022 - Critical Privilege Escalation CVE": [
+                "Kubernetes v1.0.x-1.9.xno fix available",
+                "Kubernetes v1.10.0-1.10.10fixed inv1.10.11",
+                "Kubernetes v1.11.0-1.11.4fixed inv1.11.5",
+                "Kubernetes v1.12.0-1.12.2fixed inv1.12.3\n"
+            ],
+            "KHV023 - Denial of Service to Kubernetes API Server": [
+                "Upgrade your kube-apiserver to newer versions, namely v1.11.8, v1.12.6, or v1.13.4",
+                "If you cannot upgrade, or until you do, the best course of action is to remove patch permissions from untrusted users, or generally from admins who dont really use it.\n"
+            ],
+            "KHV024 - Possible Ping Flood Attack": [
+                "Disable HTTP/2 support OR obtain a software patch if available",
+                "Disable HTTP/2 support OR obtain a software patch if available\n"
+            ],
+            "KHV026 - Arbitrary Access To Cluster Scoped Resources": [
+                "Vulnerable versions: Fixed versions:",
+                "Kubernetes 1.7.x-1.12.x Fixed in v1.13.9 by #80852",
+                "Kubernetes 1.13.0-1.13.8 Fixed in v1.14.5 by #80851",
+                "Kubernetes 1.14.0-1.14.4 Fixed in v1.15.2 by #80850",
+                "Kubernetes 1.15.0-1.15.1 Fixed in master by #80750\n"
+            ],
+            "KHV027 - Kubectl Vulnerable To CVE-2019-11246": [
+                "Update your kubectl client to one of the following versions: 1.12.9, 1.13.6, 1.14.2\n"
+            ],
+            "KHV028 - Kubectl Vulnerable To CVE-2019-1002101": [
+                "The issue is resolved in kubectl v1.11.9, v1.12.7, v1.13.5, and v1.14.0.\n"
+            ],
+            "KHV029 - Dashboard Exposed": [
+                "Do not leave the Dashboard insecured.\n"
+            ],
+            "KHV030 - Possible DNS Spoof": [
+                "Consider using DNS over TLS. CoreDNS (the common DNS server for Kubernetes) supports this out of the box, but your client applications might not.\n"   
+            ],
+            "KHV031 - Etcd Remote Write Access Event": [
+                "Ensure your etcd is accepting connections only from the Kubernetes API, using the --trusted-ca-file etcd flag. This is usually done by the installer, or cloud platform.\n"
+            ],
+            "KHV032 - Etcd Remote Read Access Event": [
+                "Ensure your etcd is accepting connections only from the Kubernetes API, using the --trusted-ca-file etcd flag. This is usually done by the installer, or cloud platform.\n"
+            ],
+            "KHV033 - Etcd Remote version disclosure": [],
+            "KHV034 - Etcd is accessible using insecure connection (HTTP)": [
+                "Ensure your setup is exposing etcd only on an HTTPS port by using the etcd flags --key-file and --cert-file.\n"
+            ],
+            "KHV036 - Anonymous Authentication": [
+                "Ensure kubelet is protected using --anonymous-auth=false kubelet flag. Allow only legitimate users using --client-ca-file or --authentication-token-webhook kubelet flags. This is usually done by the installer or cloud provider.\n"
+            ],
+            "KHV037 - Exposed Container Logs": [
+                "Disable --enable-debugging-handlers kubelet flag.\n"
+            ],
+            "KHV038 - Exposed Running Pods": [
+                "Disable --enable-debugging-handlers kubelet flag.\n"
+            ],
+            "KHV039 - Exposed Exec On Container": [
+                "Disable --enable-debugging-handlers kubelet flag.\n"
+            ],
+            "KHV040 - Exposed Run Inside Container": [
+                "Disable --enable-debugging-handlers kubelet flag.\n"
+            ],
+            "KHV041 - Exposed Port Forward": [
+                "Disable --enable-debugging-handlers kubelet flag.\n"
+            ],
+            "KHV042 - Exposed Attaching To Container": [
+                "Disable --enable-debugging-handlers kubelet flag.\n"
+            ],
+            "KHV043 - Cluster Health Disclosure": [
+                "Disable --enable-debugging-handlers kubelet flag.\n"
+            ],
+            "KHV044 - Privileged Container": [
+                "Minimize the use of privileged containers. Use Pod Security Policies to enforce using privileged: false policy.\n"
+            ],
+            "KHV045 - Exposed System Logs": [
+                "Disable --enable-debugging-handlers kubelet flag.\n"
+            ],
+            "KHV046 - Exposed Kubelet Cmdline": [
+                "Disable --enable-debugging-handlers kubelet flag.\n"
+            ],
+            "KHV047 - Pod With Mount To /var/log": [
+                "Consider disallowing running as root: Using Kubernetes Pod Security Policies with MustRunAsNonRoot policy.",
+                "Consider disallowing writable host mounts to /var/log: Using Kubernetes Pod Security Policies with AllowedHostPaths policy.\n"
+            ],
+            "KHV049 - kubectl proxy Exposed": [
+                "Expose your applications in a permanent, legitimate way, such as via Ingress.",
+                "Close open proxies immediately after use.\n"
+            ],
+            "KHV050 - Read access to Pod service account token": [
+                "It is recommended to explicitly specify a Service Account for all of your workloads (serviceAccountName in Pod.Spec), and manage their permissions according to the least privilege principle.",
+                "Consider opting out automatic mounting of SA token using automountServiceAccountToken: false on ServiceAccount resource or Pod.spec.\n"
+            ],
+            "Access to pod's secrets": [
+                "https://blog.aquasec.com/managing-kubernetes-secrets",
+                "Securing etcdsecret data is stored in etcd. By default, etcd data is not encrypted and neither are your secrets. You should enable encryption at rest, limit access to etcd to admin users only, and safely dispose of disks where etcd data was formerly stored",
+                "Use SSL/TLSwhen running etcd in a cluster, you must use secure peer-to-peer communication.\n"
+            ],
+            "CAP_NET_RAW Enabled": [
+                "CAP_NET_RAW is used to open a raw socket and is used by ping. If this is not required CAP_NET_RAW MUST be removed.",
+                "https://www.suse.com/c/demystifying-containers-part-iv-container-security/"
+            ]
+        },
+        "maturity":{
+        },
+        "core":{
+        }
     },
     "lynis_recs":{
         "Performing test ID HRDN-7220 (Check if one or more compilers are installed)":["User Recommendation 1", "User Recommendation 2"],
