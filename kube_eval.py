@@ -11,7 +11,7 @@ parser.add_argument("log_file", help="path to logfile; ex: 'kubelogs/cvb_r4.log'
 parser.add_argument("-p", "--phase", help="incubation, maturity, or core; defaults to incubation", default="incubation", type=str)
 parser.add_argument("-r", "--requirements", help="json file with tests to check; defaults to test_list.json", default="test_list.json", type=str)
 parser.add_argument("-b", "--blueprint_name", help="input blueprint name", type=str)
-parser.add_argument("-l", "--logging", help="set this flag to enable writing to log lynis_eval_[blueprintname]_[date_time].log", action='store_true')
+parser.add_argument("-l", "--logging", help="set this flag to enable writing to log kube_eval_[blueprintname]_[date_time].log", action='store_true')
 args = parser.parse_args()
 
 
