@@ -23,31 +23,21 @@ def get_vulns(log_list):
     vuln_list = []
     for line in log_list:
         if "KHV" in line:
-            vuln = re.search(r"KHV\d", line)
+            vuln = re.search(r"KHV\d*", line)
+            vuln_list.append(vuln.group())
         elif "CAP_NET_RAW Enabled" in line:
             vuln = "CAP_NET_RAW Enabled"
+            vuln_list.append(vuln)
         elif "Access to pod's" in line:
             vuln = "Access to pod's secrets"
-        vuln_list.append(vuln)
+            vuln_list.append(vuln)
     return vuln_list
 
-
-def find_vulns(requirements, log_list):
-
-
-
 def main(log_path, phase, req_path, blueprint_name, logging):
-    '''Takes log, phase, and requirements documents to find important failing tests
-    '''
-    # reads in json object of tests to be checked
+    '''Takes log, phase, and requirements documents to find important failing tests'''
     log_string = load_files.load_log(log_path)
     log_list = load_files.load_log(log_path, False)
     requirements = load_files.load_requirements(req_path)
-    # else:
-    #     for line in log_list:
-    #         if requirements["kube-hunter"][phase] in line:
-    #             print 
-    #Controls logging of results if logging flag enabled
     now = datetime.now().strftime("%Y_%m_%d_%H#%M#%S")
     filename = "kube_eval_" + blueprint_name + "_" + now +".log"
     if(logging):
@@ -56,13 +46,20 @@ def main(log_path, phase, req_path, blueprint_name, logging):
 
     print(load_files.bcolors.INFO + blueprint_name + ": Kube-Hunter Evaluation " + now + load_files.bcolors.RESET)
     if check_success(log_string):
-        print("No vulnerabilities found")
+        print(load_files.bcolors.OK + "No vulnerabilities found" + load_files.bcolors.RESET)
     else:
-        find_vulns(log_list)
+        for vuln in get_vulns(log_list):
+            print(load_files.bcolors.FAIL + requirements["kube-hunter"][phase][vuln][0] + load_files.bcolors.RESET)
+            for line in requirements["kube-hunter"][phase][vuln]:
+                if line !=requirements["kube-hunter"][phase][vuln][0]:
+                    print("\t" + line)
+
+
     
     if(logging):
         log_file.close()
-        sys.stdout = sys.__stdout__  
+        sys.stdout = sys.__stdout__
+
 
 if __name__ == "__main__":
     main(args.log_file, args.phase, args.requirements, args.blueprint_name, args.logging)
