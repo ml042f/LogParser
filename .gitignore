@@ -1,4 +1,5 @@
 lynis_eval_*
+kubelogs
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
