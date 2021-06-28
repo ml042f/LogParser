@@ -19,11 +19,21 @@ def check_success(log_list):
     if "No vulnerabilities were found" in log_list:
         return True
 
-def get_req_id(requirement):
-    if "KHV" in requirement:
-        return requirement[0:5]
-    else:
-        return requirement
+def get_vulns(log_list):
+    vuln_list = []
+    for line in log_list:
+        if "KHV" in line:
+            vuln = re.search(r"KHV\d", line)
+        elif "CAP_NET_RAW Enabled" in line:
+            vuln = "CAP_NET_RAW Enabled"
+        elif "Access to pod's" in line:
+            vuln = "Access to pod's secrets"
+        vuln_list.append(vuln)
+    return vuln_list
+
+
+def find_vulns(requirements, log_list):
+
 
 
 def main(log_path, phase, req_path, blueprint_name, logging):
@@ -47,10 +57,9 @@ def main(log_path, phase, req_path, blueprint_name, logging):
     print(load_files.bcolors.INFO + blueprint_name + ": Kube-Hunter Evaluation " + now + load_files.bcolors.RESET)
     if check_success(log_string):
         print("No vulnerabilities found")
+    else:
+        find_vulns(log_list)
     
-    
-    re.escape(r'\ a.*$')
-
     if(logging):
         log_file.close()
         sys.stdout = sys.__stdout__  
