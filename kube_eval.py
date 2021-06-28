@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import re
-import json
 import argparse
 from datetime import datetime
 import sys
@@ -35,9 +34,11 @@ def get_vulns(log_list):
 
 def main(log_path, phase, req_path, blueprint_name, logging):
     '''Takes log, phase, and requirements documents to find important failing tests'''
+
     log_string = load_files.load_log(log_path)
     log_list = load_files.load_log(log_path, False)
     requirements = load_files.load_requirements(req_path)
+
     now = datetime.now().strftime("%Y_%m_%d_%H#%M#%S")
     filename = "kube_eval_" + blueprint_name + "_" + now +".log"
     if(logging):
@@ -45,6 +46,7 @@ def main(log_path, phase, req_path, blueprint_name, logging):
         sys.stdout = log_file
 
     print(load_files.bcolors.INFO + blueprint_name + ": Kube-Hunter Evaluation " + now + load_files.bcolors.RESET)
+    
     if check_success(log_string):
         print(load_files.bcolors.OK + "No vulnerabilities found" + load_files.bcolors.RESET)
     else:
@@ -53,8 +55,6 @@ def main(log_path, phase, req_path, blueprint_name, logging):
             for line in requirements["kube-hunter"][phase][vuln]:
                 if line !=requirements["kube-hunter"][phase][vuln][0]:
                     print("\t" + line)
-
-
     
     if(logging):
         log_file.close()

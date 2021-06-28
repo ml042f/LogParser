@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import re
-import json
 import argparse
 from datetime import datetime
 import sys
