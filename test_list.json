@@ -341,7 +341,7 @@
         }
     },
     "lynis_recs":{
-        "Performing test ID HRDN-7220 (Check if one or more compilers are installed)":["User Recommendation 1", "User Recommendation 2"],
-        "Performing test ID AUTH-9328 (Default umask values)":["User Recommendation 3", "User Recommendation 4"]
+        "Performing test ID HRDN-7220 (Check if one or more compilers are installed)":[],
+        "Performing test ID AUTH-9328 (Default umask values)":[]
     }
 }
