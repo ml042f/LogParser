@@ -1,5 +1,11 @@
 lynis_eval_*
 kubelogs
+*.log
+*.zip
+*.html
+*.xml
+*.yaml
+*.dat
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
